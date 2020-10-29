@@ -28,8 +28,4 @@ extern double nfsqrt(double value);
 
 extern double nround(double value, uint precision);
 
-#ifndef	RAND_MAX
-#define RAND_MAX (0x7FFFFFFF)
-#endif
-
 #endif
