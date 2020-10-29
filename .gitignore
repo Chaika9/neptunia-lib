@@ -1,0 +1,4 @@
+# Temp files
+*.o
+*.a
+*.out
