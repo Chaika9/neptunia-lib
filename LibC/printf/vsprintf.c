@@ -27,7 +27,7 @@ PRIVATE struct nprintf_flag flags[] = {
     {'f', local_print_float},
     {'p', local_print_ptr},
     {'z', local_print_list},
-    {NULL}
+    {'\0', NULL}
 };
 
 PRIVATE void check_flag(char flag, nprintf_param_t *param, va_list args)

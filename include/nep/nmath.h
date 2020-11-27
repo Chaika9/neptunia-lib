@@ -20,6 +20,9 @@ extern double nfabs(double value);
 extern nsize_t ndeclen(int value);
 extern nsize_t nudeclen(ullong value);
 
+extern double nfloor(double value);
+extern float nfloorf(float value);
+
 extern double npow(double value, uint power);
 extern long double nlpow(long double value, uint power);
 

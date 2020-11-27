@@ -18,7 +18,7 @@ nsize_t nprintf(const char *format, ...)
     char *buf = malloc(NPRINTF_BUFFER_SIZE);
     nsize_t out = 0;
 
-    nmemset(buf, NULL, NPRINTF_BUFFER_SIZE);
+    nmemset(buf, 0, NPRINTF_BUFFER_SIZE);
     va_start(args, format);
     nvsprintf(buf, format, args);
     va_end(args);
@@ -32,7 +32,7 @@ nsize_t nvprintf(const char *format, va_list args)
     char *buf = malloc(NPRINTF_BUFFER_SIZE);
     nsize_t out = 0;
 
-    nmemset(buf, NULL, NPRINTF_BUFFER_SIZE);
+    nmemset(buf, 0, NPRINTF_BUFFER_SIZE);
     nvsprintf(buf, format, args);
     out = nwrite(1, buf);
     free(buf);

@@ -40,6 +40,7 @@ SRC =	LibC/assert/assert.c \
 		\
 		LibC/math/abs.c \
 		LibC/math/declen.c \
+		LibC/math/floor.c \
 		LibC/math/pow.c \
 		LibC/math/round.c \
 		LibC/math/sqrt.c \
