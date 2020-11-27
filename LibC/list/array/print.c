@@ -24,10 +24,8 @@ void list_print_str(char **_buf, list_t *list)
             while (*str)
                 *buf++ = *str++;
         }
-        if (node->next) {
-            *buf++ = 44;
-            *buf++ = ' ';
-        }
+        if (node->next)
+            local_print_manage_str(&buf, ", ");
     }
     *buf++ = ']';
     *_buf = buf;
@@ -45,10 +43,8 @@ void list_print_int(char **_buf, list_t *list)
             local_print_manage_base(&buf, *((int *)node->value), \
             "0123456789", FALSE);
         }
-        if (node->next) {
-            *buf++ = 44;
-            *buf++ = ' ';
-        }
+        if (node->next)
+            local_print_manage_str(&buf, ", ");
     }
     *buf++ = ']';
     *_buf = buf;

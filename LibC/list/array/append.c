@@ -31,7 +31,7 @@ list_node_t *list_add(list_t *list, void *value)
 {
     list_node_t *node = malloc(sizeof(list_node_t));
 
-    nmemset((u8 *)node, 0, sizeof(list_node_t));
+    nmemset(node, 0, sizeof(list_node_t));
     node->value = value;
     list_append(list, node);
     return node;
@@ -57,7 +57,7 @@ list_node_t *list_add_before(list_t * list, list_node_t *after, void *value)
 {
     list_node_t *node = malloc(sizeof(list_node_t));
 
-    nmemset((u8 *)node, 0, sizeof(list_node_t));
+    nmemset(node, 0, sizeof(list_node_t));
     node->value = value;
     list_append_before(list, after, node);
     return node;

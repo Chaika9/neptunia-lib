@@ -28,6 +28,7 @@ SRC =	LibC/assert/assert.c \
 		LibC/list/array/get.c \
 		LibC/list/array/list.c \
 		LibC/list/array/print.c \
+		LibC/list/array/sort.c \
 		\
 		LibC/list/hashmap/append.c \
 		LibC/list/hashmap/clear.c \

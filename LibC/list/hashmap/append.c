@@ -31,7 +31,7 @@ hashmap_node_t *hashmap_add(hashmap_t *list, const char *key, void *value)
 {
     hashmap_node_t *node = malloc(sizeof(hashmap_node_t));
 
-    nmemset((u8 *)node, 0, sizeof(hashmap_node_t));
+    nmemset(node, 0, sizeof(hashmap_node_t));
     node->key = key;
     node->hash = local_hashmap_str_hash(key);
     node->value = value;
@@ -61,7 +61,7 @@ const char *key, void *value)
 {
     hashmap_node_t *node = malloc(sizeof(hashmap_node_t));
 
-    nmemset((u8 *)node, 0, sizeof(hashmap_node_t));
+    nmemset(node, 0, sizeof(hashmap_node_t));
     node->key = key;
     node->hash = local_hashmap_str_hash(key);
     node->value = value;

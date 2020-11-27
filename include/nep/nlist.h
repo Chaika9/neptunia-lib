@@ -50,6 +50,8 @@ extern list_t *list_copy(list_t *original);
 extern void list_remove(list_t *list, list_node_t *node);
 extern void *list_pop(list_t *list);
 
+extern void list_sort(list_t *list, int(*cmp)());
+
 extern void list_print_str(char **_buf, list_t *list);
 extern void list_print_int(char **_buf, list_t *list);
 
