@@ -38,6 +38,8 @@ SRC =	LibC/assert/assert.c \
 		LibC/list/hashmap/hash.c \
 		LibC/list/hashmap/hashmap.c \
 		LibC/list/hashmap/list.c \
+		LibC/list/hashmap/print.c \
+		LibC/list/hashmap/sort.c \
 		\
 		LibC/math/abs.c \
 		LibC/math/declen.c \

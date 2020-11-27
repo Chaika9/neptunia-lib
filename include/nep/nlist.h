@@ -23,7 +23,7 @@ typedef struct list {
     list_node_t *head;
     list_node_t *tail;
     nsize_t length;
-    void (* print)(char **, struct list *);
+    void (*print)(char **, struct list *);
 } list_t;
 
 #define list_foreach(node, list) \

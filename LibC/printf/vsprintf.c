@@ -26,7 +26,7 @@ PRIVATE struct nprintf_flag flags[] = {
     {'b', local_print_binary},
     {'f', local_print_float},
     {'p', local_print_ptr},
-    {'z', local_print_list},
+    {'z', local_print_list}, {'y', local_print_hashmap},
     {'\0', NULL}
 };
 

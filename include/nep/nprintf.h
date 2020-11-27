@@ -57,6 +57,7 @@ extern void local_print_binary(nprintf_param_t *p, va_list args);
 extern void local_print_float(nprintf_param_t *param, va_list args);
 extern void local_print_ptr(nprintf_param_t *param, va_list args);
 extern void local_print_list(nprintf_param_t *param, va_list args);
+extern void local_print_hashmap(nprintf_param_t *p, va_list args);
 
 extern void local_print_manage_base(char **_buf, ullong value, \
 const char *base, boolean up);

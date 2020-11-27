@@ -22,10 +22,11 @@ typedef struct hashmap_node {
     void *host;
 } hashmap_node_t;
 
-typedef struct {
+typedef struct hashmap {
     hashmap_node_t *head;
     hashmap_node_t *tail;
     nsize_t length;
+    void (*print)(char **, struct hashmap *);
 } hashmap_t;
 
 #define hashmap_foreach(node, list) \
@@ -55,5 +56,12 @@ extern void hashmap_remove(hashmap_t *list, hashmap_node_t *node);
 extern void *hashmap_pop(hashmap_t *list);
 
 extern list_t *hashmap_tolist(hashmap_t *list);
+
+extern void hashmap_sort(hashmap_t *list, int(*cmp)());
+
+extern int hashmap_cmp_str(hashmap_node_t *n1, hashmap_node_t *n2);
+extern int hashmap_cmp_int(hashmap_node_t *n1, hashmap_node_t *n2);
+
+extern void hashmap_print_str(char **_buf, hashmap_t *list);
 
 #endif

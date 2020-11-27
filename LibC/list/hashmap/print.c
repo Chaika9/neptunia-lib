@@ -2,23 +2,25 @@
 ** EPITECH PROJECT, 2020
 ** LibC
 ** File description:
-** list - array/print.
+** list - hashmap/print.
 */
 
-#include <nep/nlist.h>
+#include <nep/nhashmap.h>
 #include <nep/nprintf.h>
 
 #include <stdio.h>
 
-void list_print_str(char **_buf, list_t *list)
+void hashmap_print_str(char **_buf, hashmap_t *list)
 {
     char *buf = *_buf;
 
     *buf++ = '{';
-    list_foreach(node, list) {
+    hashmap_foreach(node, list) {
         if (node->value == NULL) {
             local_print_manage_str(&buf, "(null)");
         } else {
+            local_print_manage_str(&buf, (char *)node->key);
+            *buf++ = 61;
             local_print_manage_str(&buf, (char *)node->value);
         }
         if (node->next)
@@ -28,12 +30,12 @@ void list_print_str(char **_buf, list_t *list)
     *_buf = buf;
 }
 
-void list_print_int(char **_buf, list_t *list)
+void hashmap_print_int(char **_buf, hashmap_t *list)
 {
     char *buf = *_buf;
 
     *buf++ = '{';
-    list_foreach(node, list) {
+    hashmap_foreach(node, list) {
         if (node->value == NULL) {
             local_print_manage_str(&buf, "(null)");
         } else {
