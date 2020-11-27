@@ -23,8 +23,12 @@ typedef struct {
     char *buf;
     boolean isupper;
     boolean alt;
-    int arg_width;
+    uint precision;
+    uint wight;
+    char w_ch;
     int big;
+    boolean plus;
+    boolean minos;
 } nprintf_param_t;
 
 extern nsize_t nprintf(const char *format, ...);
@@ -36,7 +40,12 @@ extern nsize_t nvsprintf(char *buf, const char *format, va_list args);
 extern nsize_t nfprintf(FILE *stream, const char *format, ...);
 extern nsize_t nvfprintf(FILE *stream, const char *format, va_list args);
 
-extern void local_parse_param(const char **c, nprintf_param_t *p, va_list args);
+extern void local_parse_param(const char **c, nprintf_param_t *p);
+
+extern void local_parse_param_precision(const char **ch, nprintf_param_t *p);
+extern void local_parse_param_big(const char **ch, nprintf_param_t *p);
+extern void local_parse_param_sign(const char **ch, nprintf_param_t *p);
+extern void local_parse_param_wight(const char **ch, nprintf_param_t *p);
 
 extern void local_print_char(nprintf_param_t *param, va_list args);
 extern void local_print_str(nprintf_param_t *param, va_list args);

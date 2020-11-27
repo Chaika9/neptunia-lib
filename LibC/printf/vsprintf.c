@@ -50,7 +50,7 @@ nsize_t nvsprintf(char *buf, const char *format, va_list args)
         }
         c++;
         param.buf = b;
-        local_parse_param(&c, &param, args);
+        local_parse_param(&c, &param);
         param.isupper = nisupper(*c);
         check_flag(ntolower(*c), &param, args);
         b = param.buf;

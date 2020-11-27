@@ -45,6 +45,8 @@ SRC =	LibC/assert/assert.c \
 		LibC/math/round.c \
 		LibC/math/sqrt.c \
 		\
+		LibC/printf/param/param_digits.c \
+		LibC/printf/param/parse_param.c \
 		LibC/printf/print/printbase.c \
 		LibC/printf/print/printbinary.c \
 		LibC/printf/print/printdec.c \
@@ -57,7 +59,6 @@ SRC =	LibC/assert/assert.c \
 		LibC/printf/print/printstr.c \
 		LibC/printf/print/printulong.c \
 		LibC/printf/fprintf.c \
-		LibC/printf/parseparam.c \
 		LibC/printf/printf.c \
 		LibC/printf/sprintf.c \
 		LibC/printf/vsprintf.c \
