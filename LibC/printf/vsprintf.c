@@ -6,9 +6,9 @@
 */
 
 #include <nep/nprintf.h>
-#include <nep/nva_list.h>
-#include <nep/nwrite.h>
 #include <nep/nmath.h>
+#include <nep/nwrite.h>
+#include <nep/nva_list.h>
 #include <nep/nctype.h>
 
 struct nprintf_flag {
@@ -27,7 +27,7 @@ PRIVATE struct nprintf_flag flags[] = {
     {'f', local_print_float},
     {'p', local_print_ptr},
     {'z', local_print_list},
-    {'\0', NULL}
+    {NULL}
 };
 
 PRIVATE void check_flag(char flag, nprintf_param_t *param, va_list args)
