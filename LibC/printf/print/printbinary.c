@@ -15,7 +15,8 @@ void local_print_binary(nprintf_param_t *p, va_list args)
 
     if (p->big == 2) {
         val = va_arg(args, ullong);
-    } else
+    } else {
         val = (ullong)va_arg(args, ulong);
-    local_print_base(&p->buf, val, "01", p->isupper);
+    }
+    local_print_manage_base(&p->buf, val, "01", p->isupper);
 }

@@ -18,7 +18,7 @@ void list_print_str(char **_buf, list_t *list)
     *buf++ = '[';
     list_foreach(node, list) {
         if (node->value == NULL) {
-            local_print_error(&buf, "(null)");
+            local_print_manage_str(&buf, "(null)");
         } else {
             str = (char *)node->value;
             while (*str)
@@ -40,9 +40,10 @@ void list_print_int(char **_buf, list_t *list)
     *buf++ = '[';
     list_foreach(node, list) {
         if (node->value == NULL) {
-            local_print_error(&buf, "(null)");
+            local_print_manage_str(&buf, "(null)");
         } else {
-            local_print_base(&buf, *((int *)node->value), "0123456789", FALSE);
+            local_print_manage_base(&buf, *((int *)node->value), \
+            "0123456789", FALSE);
         }
         if (node->next) {
             *buf++ = 44;

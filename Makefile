@@ -47,10 +47,10 @@ SRC =	LibC/assert/assert.c \
 		\
 		LibC/printf/param/param_digits.c \
 		LibC/printf/param/parse_param.c \
+		LibC/printf/print/manage/printstr.c \
 		LibC/printf/print/printbase.c \
 		LibC/printf/print/printbinary.c \
 		LibC/printf/print/printdec.c \
-		LibC/printf/print/printerror.c \
 		LibC/printf/print/printfloat.c \
 		LibC/printf/print/printhex.c \
 		LibC/printf/print/printlist.c \

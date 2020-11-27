@@ -10,7 +10,8 @@
 #include <nep/nmath.h>
 #include <nep/nctype.h>
 
-void local_print_base(char **buf, ullong value, const char *base, boolean up)
+void local_print_manage_base(char **buf, ullong value, \
+const char *base, boolean up)
 {
     ullong result = 0;
     ullong power = 1;

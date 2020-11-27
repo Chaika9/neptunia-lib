@@ -24,5 +24,5 @@ void local_print_dec(nprintf_param_t *p, va_list args)
         *(p->buf)++ = '-';
         val = -val;
     }
-    local_print_base(&p->buf, val, "0123456789", p->isupper);
+    local_print_manage_base(&p->buf, val, "0123456789", p->isupper);
 }

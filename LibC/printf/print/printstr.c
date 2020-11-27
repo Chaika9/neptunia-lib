@@ -14,11 +14,10 @@ void local_print_str(nprintf_param_t *p, va_list args)
     char *str = va_arg(args, char *);
 
     if (str == NULL) {
-        local_print_error(&p->buf, "(null)");
+        local_print_manage_str(&p->buf, "(null)");
         return;
     }
-    while (*str)
-        *(p->buf)++ = *str++;
+    local_print_manage_str(&p->buf, str);
 }
 
 void local_print_char(nprintf_param_t *p, va_list args)

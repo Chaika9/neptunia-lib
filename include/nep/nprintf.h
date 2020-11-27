@@ -58,8 +58,8 @@ extern void local_print_float(nprintf_param_t *param, va_list args);
 extern void local_print_ptr(nprintf_param_t *param, va_list args);
 extern void local_print_list(nprintf_param_t *param, va_list args);
 
-extern void local_print_base(char **_buf, ullong value, const char *base, \
-boolean up);
-extern void local_print_error(char **buf, const char *err);
+extern void local_print_manage_base(char **_buf, ullong value, \
+const char *base, boolean up);
+extern void local_print_manage_str(char **buf, const char *str);
 
 #endif
