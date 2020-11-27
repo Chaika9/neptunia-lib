@@ -31,6 +31,14 @@ extern double nfsqrt(double value);
 
 extern double nround(double value, uint precision);
 
+#ifndef	MIN
+#define MIN(a, b) ((a < b) ? a : b)
+#endif
+
+#ifndef	MAX
+#define MAX(a, b) (a > b) ? a : b)
+#endif
+
 #ifndef	RAND_MAX
 #define RAND_MAX (0x7FFFFFFF)
 #endif
