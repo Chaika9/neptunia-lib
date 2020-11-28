@@ -12,5 +12,9 @@ void local_nbprintf_string(char **buf, va_list args)
 {
     char *str = va_arg(args, char *);
 
+    if (str == NULL) {
+        nstrbuf(buf, "(null)");
+        return;
+    }
     nstrbuf(buf, str);
 }
