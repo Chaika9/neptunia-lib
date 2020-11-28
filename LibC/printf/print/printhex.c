@@ -6,6 +6,7 @@
 */
 
 #include <nep/nprintf.h>
+#include <nep/nstring.h>
 #include <nep/nva_list.h>
 #include <nep/nctype.h>
 
@@ -22,5 +23,5 @@ void local_print_hex(nprintf_param_t *p, va_list args)
         *(p->buf)++ = '0';
         *(p->buf)++ = (p->isupper ? 'X' : 'x');
     }
-    local_print_manage_base(&p->buf, val, "0123456789abcdef", p->isupper);
+    nullbuf(&p->buf, val, p->isupper ? "0123456789ABCDEF" : "0123456789abcdef");
 }

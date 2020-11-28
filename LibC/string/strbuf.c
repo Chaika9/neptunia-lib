@@ -2,11 +2,13 @@
 ** EPITECH PROJECT, 2020
 ** LibC
 ** File description:
-** nprintf - manage print/str.
+** string - nstrbuf.
 */
 
-void local_print_manage_str(char **buf, const char *str)
+void nstrbuf(char **buf, const char *str)
 {
+    if (!str)
+        return;
     while (*str)
         *(*buf)++ = *str++;
 }

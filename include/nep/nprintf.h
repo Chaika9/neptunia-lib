@@ -59,8 +59,15 @@ extern void local_print_ptr(nprintf_param_t *p, va_list args);
 extern void local_print_list(nprintf_param_t *p, va_list args);
 extern void local_print_hashmap(nprintf_param_t *p, va_list args);
 
-extern void local_print_manage_base(char **_buf, ullong value, \
-const char *base, boolean up);
-extern void local_print_manage_str(char **buf, const char *str);
+extern nsize_t nbprintf(const char *format, ...);
+extern void nbprintf_register_flag(const char *flag, void(*func)());
+
+extern void local_nbprintf_char(char **buf, va_list args);
+extern void local_nbprintf_string(char **buf, va_list args);
+extern void local_nbprintf_int(char **buf, va_list args);
+extern void local_nbprintf_long(char **buf, va_list args);
+extern void local_nbprintf_llong(char **buf, va_list args);
+extern void local_nbprintf_ullong(char **buf, va_list args);
+extern void local_nbprintf_list(char **buf, va_list args);
 
 #endif

@@ -2,16 +2,13 @@
 ** EPITECH PROJECT, 2020
 ** LibC
 ** File description:
-** nprintf - print/base.
+** string - nullbuf.
 */
 
-#include <nep/nprintf.h>
 #include <nep/nstring.h>
-#include <nep/nmath.h>
 #include <nep/nctype.h>
 
-void local_print_manage_base(char **buf, ullong value, \
-const char *base, boolean up)
+void nullbuf(char **buf, ullong value, const char *base)
 {
     ullong result = 0;
     ullong power = 1;
@@ -26,7 +23,6 @@ const char *base, boolean up)
     while (power > 0) {
         result = (value / power) % baselen;
         power = power / baselen;
-        *(*buf)++ = (up ? ntoupper(base[result]) \
-        : base[result]);
+        *(*buf)++ = base[result];
     }
 }

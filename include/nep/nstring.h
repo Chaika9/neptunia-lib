@@ -41,6 +41,9 @@ extern char *nstrstr(char *str, const char *find);
 extern boolean nstr_isalpha(char *str);
 extern boolean nstr_isdigit(char *str);
 
+extern void nstrbuf(char **buf, const char *str);
+extern void nullbuf(char **buf, ullong value, const char *base);
+
 extern long local_at_check_format(const char *str, boolean *isneg);
 
 #endif

@@ -6,6 +6,7 @@
 */
 
 #include <nep/nprintf.h>
+#include <nep/nstring.h>
 #include <nep/nva_list.h>
 #include <nep/nctype.h>
 
@@ -18,5 +19,5 @@ void local_print_ulong(nprintf_param_t *p, va_list args)
     } else {
         val = (ullong)va_arg(args, ulong);
     }
-    local_print_manage_base(&p->buf, val, "0123456789", p->isupper);
+    nullbuf(&p->buf, val, "0123456789");
 }

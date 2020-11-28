@@ -48,10 +48,15 @@ SRC =	LibC/assert/assert.c \
 		LibC/math/round.c \
 		LibC/math/sqrt.c \
 		\
+		LibC/printf/bprintf/bchar.c \
+		LibC/printf/bprintf/blist.c \
+		LibC/printf/bprintf/bnbr.c \
+		LibC/printf/bprintf/bprintf.c \
+		LibC/printf/bprintf/bstring.c \
+		LibC/printf/bprintf/bunbr.c \
+		\
 		LibC/printf/param/param_digits.c \
 		LibC/printf/param/parse_param.c \
-		LibC/printf/print/manage/printbase.c \
-		LibC/printf/print/manage/printstr.c \
 		LibC/printf/print/printbinary.c \
 		LibC/printf/print/printdec.c \
 		LibC/printf/print/printfloat.c \
@@ -73,6 +78,7 @@ SRC =	LibC/assert/assert.c \
 		LibC/string/memset.c \
 		LibC/string/str_isalpha.c \
 		LibC/string/str_isdigit.c \
+		LibC/string/strbuf.c \
 		LibC/string/strcat.c \
 		LibC/string/strcmp.c \
 		LibC/string/strcpy.c \
@@ -82,6 +88,7 @@ SRC =	LibC/assert/assert.c \
 		LibC/string/strrev.c \
 		LibC/string/strstr.c \
 		LibC/string/strupr.c \
+		LibC/string/ullbuf.c \
 		\
 		LibC/write/write.c \
 

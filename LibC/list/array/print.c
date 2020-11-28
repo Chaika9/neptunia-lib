@@ -6,6 +6,7 @@
 */
 
 #include <nep/nlist.h>
+#include <nep/nstring.h>
 #include <nep/nprintf.h>
 
 #include <stdio.h>
@@ -17,12 +18,12 @@ void list_print_str(char **_buf, list_t *list)
     *buf++ = '{';
     list_foreach(node, list) {
         if (node->value == NULL) {
-            local_print_manage_str(&buf, "(null)");
+            nstrbuf(&buf, "(null)");
         } else {
-            local_print_manage_str(&buf, (char *)node->value);
+            nstrbuf(&buf, (char *)node->value);
         }
         if (node->next)
-            local_print_manage_str(&buf, ", ");
+            nstrbuf(&buf, ", ");
     }
     *buf++ = '}';
     *_buf = buf;
@@ -35,13 +36,12 @@ void list_print_int(char **_buf, list_t *list)
     *buf++ = '{';
     list_foreach(node, list) {
         if (node->value == NULL) {
-            local_print_manage_str(&buf, "(null)");
+            nstrbuf(&buf, "(null)");
         } else {
-            local_print_manage_base(&buf, *((int *)node->value), \
-            "0123456789", FALSE);
+            nullbuf(&buf, *((int *)node->value), "0123456789");
         }
         if (node->next)
-            local_print_manage_str(&buf, ", ");
+            nstrbuf(&buf, ", ");
     }
     *buf++ = '}';
     *_buf = buf;

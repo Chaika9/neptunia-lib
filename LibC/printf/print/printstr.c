@@ -6,6 +6,7 @@
 */
 
 #include <nep/nprintf.h>
+#include <nep/nstring.h>
 #include <nep/nva_list.h>
 #include <nep/nctype.h>
 
@@ -14,10 +15,10 @@ void local_print_str(nprintf_param_t *p, va_list args)
     char *str = va_arg(args, char *);
 
     if (str == NULL) {
-        local_print_manage_str(&p->buf, "(null)");
+        nstrbuf(&p->buf, "(null)");
         return;
     }
-    local_print_manage_str(&p->buf, str);
+    nstrbuf(&p->buf, str);
 }
 
 void local_print_char(nprintf_param_t *p, va_list args)
