@@ -42,8 +42,8 @@ PRIVATE char *get_flag(const char *_c)
     _c += 2;
     while (*c != '}' && *c != 0)
         c++;
-    flag = malloc((uint64_t)&(*c) - start);
-    nmemset(flag, 0, (uint64_t)&(*c) - start);
+    flag = malloc((uint64_t)&(*c) - start + 1);
+    nmemset(flag, 0, (uint64_t)&(*c) - start + 1);
     nmemcpy(flag, _c, (uint64_t)&(*c) - start);
     return flag;
 }
