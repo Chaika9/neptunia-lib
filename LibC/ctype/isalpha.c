@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2020
-** LibC
+** EPITECH PROJECT, 2021
+** neptunia-lib
 ** File description:
-** ctype - nisalpha.
+** ctype - nisalpha
 */
 
 #include <nep/nctype.h>

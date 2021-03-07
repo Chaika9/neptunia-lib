@@ -1,19 +1,22 @@
 /*
-** EPITECH PROJECT, 2020
-** LibC
+** EPITECH PROJECT, 2021
+** neptunia-lib
 ** File description:
-** list - array/clear.
+** list - array/clear
 */
 
 #include <nep/nlist.h>
-#include <nep/nctype.h>
+#include <nep/nassert.h>
 #include <stdlib.h>
 
 void list_clear(list_t *list)
 {
-    list_node_t *node = list->head;
-    list_node_t *next;
+    list_node_t *node, *next;
 
+    nassert(list == NULL && "[list] -> NullPointer!");
+    if (list == NULL)
+        return;
+    node = list->head;
     while (node) {
         next = node->next;
         free(node);
@@ -26,6 +29,9 @@ void list_clear(list_t *list)
 
 void list_free(list_t *list)
 {
+    nassert(list == NULL && "[list] -> NullPointer!");
+    if (list == NULL)
+        return;
     list_clear(list);
     free(list);
 }

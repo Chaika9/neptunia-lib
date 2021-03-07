@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2020
-** LibC
+** EPITECH PROJECT, 2021
+** neptunia-lib
 ** File description:
-** ctype - nisdigit.
+** ctype - nisdigit
 */
 
 int nisdigit(int c)

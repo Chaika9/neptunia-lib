@@ -1,19 +1,20 @@
 /*
-** EPITECH PROJECT, 2020
-** LibC
+** EPITECH PROJECT, 2021
+** neptunia-lib
 ** File description:
-** list - hashmap/delete.
+** list - array/delete
 */
 
-#include <nep/nhashmap.h>
-#include <nep/nstring.h>
+#include <nep/nlist.h>
 #include <nep/nassert.h>
 #include <nep/nctype.h>
 
-void hashmap_remove(hashmap_t *list, hashmap_node_t *node)
+void list_remove(list_t *list, list_node_t *node)
 {
-    nassert(node->host == list && "Tried to remove a hashmap node from a \
-    hashmap it does not belong to!");
+    nassert(node->host != list && \
+    "Tried to remove a list node from a list it does not belong to!");
+    if (node->host != list)
+        return;
     if (node == list->head)
         list->head = node->next;
     if (node == list->tail)
@@ -27,13 +28,14 @@ void hashmap_remove(hashmap_t *list, hashmap_node_t *node)
     list->length--;
 }
 
-void *hashmap_pop(hashmap_t *list)
+void *list_pop(list_t *list)
 {
-    hashmap_node_t *out;
+    list_node_t *out;
 
-    if (!list->tail)
+    nassert(list == NULL && "(list) -> NullPointer!");
+    if (list == NULL || !list->tail)
         return NULL;
     out = list->tail;
-    hashmap_remove(list, out);
+    list_remove(list, out);
     return out->value;
 }

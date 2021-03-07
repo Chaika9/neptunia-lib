@@ -2,6 +2,3 @@
 *.o
 *.a
 *.out
-
-# Project temp files
-main.c

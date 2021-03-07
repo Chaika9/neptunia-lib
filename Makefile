@@ -21,25 +21,25 @@ SRC =	LibC/assert/assert.c \
 		LibC/ctype/tolower.c \
 		LibC/ctype/toupper.c \
 		\
-		LibC/list/array/append.c \
-		LibC/list/array/clear.c \
-		LibC/list/array/copy.c \
-		LibC/list/array/delete.c \
-		LibC/list/array/get.c \
-		LibC/list/array/list.c \
-		LibC/list/array/print.c \
-		LibC/list/array/sort.c \
+		LibC/list/array/list_add.c \
+		LibC/list/array/list_clear.c \
+		LibC/list/array/list_copy.c \
+		LibC/list/array/list_create.c \
+		LibC/list/array/list_delete.c \
+		LibC/list/array/list_get.c \
+		LibC/list/array/list_print.c \
+		LibC/list/array/list_sort.c \
 		\
-		LibC/list/hashmap/append.c \
-		LibC/list/hashmap/clear.c \
-		LibC/list/hashmap/copy.c \
-		LibC/list/hashmap/delete.c \
-		LibC/list/hashmap/get.c \
-		LibC/list/hashmap/hash.c \
-		LibC/list/hashmap/hashmap.c \
-		LibC/list/hashmap/list.c \
-		LibC/list/hashmap/print.c \
-		LibC/list/hashmap/sort.c \
+		LibC/list/hashmap/hashmap_add.c \
+		LibC/list/hashmap/hashmap_clear.c \
+		LibC/list/hashmap/hashmap_copy.c \
+		LibC/list/hashmap/hashmap_create.c \
+		LibC/list/hashmap/hashmap_delete.c \
+		LibC/list/hashmap/hashmap_get.c \
+		LibC/list/hashmap/hashmap_hash.c \
+		LibC/list/hashmap/hashmap_print.c \
+		LibC/list/hashmap/hashmap_sort.c \
+		LibC/list/hashmap/hashmap_tolist.c \
 		\
 		LibC/math/abs.c \
 		LibC/math/declen.c \
@@ -47,6 +47,9 @@ SRC =	LibC/assert/assert.c \
 		LibC/math/pow.c \
 		LibC/math/round.c \
 		LibC/math/sqrt.c \
+		\
+		LibC/mem/calloc.c \
+		LibC/mem/realloc.c \
 		\
 		LibC/printf/bprintf/bchar.c \
 		LibC/printf/bprintf/blist.c \

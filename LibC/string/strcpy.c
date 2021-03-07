@@ -14,7 +14,7 @@ char *nstrcpy(char *dest, const char *src)
 
     for (i = 0; src[i]; i++)
         dest[i] = src[i];
-    dest[i] = '\0';
+    dest[i] = 0;
     return dest;
 }
 
@@ -26,6 +26,6 @@ char *nstrncpy(char *dest, const char *src, nsize_t length)
     for (i = 0; src[i] && i < length; i++)
         dest[i] = src[i];
     if (length > len)
-        dest[i] = '\0';
+        dest[i] = 0;
     return dest;
 }

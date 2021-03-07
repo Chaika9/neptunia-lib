@@ -1,14 +1,21 @@
 /*
-** EPITECH PROJECT, 2020
-** LibC
+** EPITECH PROJECT, 2021
+** neptunia-lib
 ** File description:
-** ctype - nswap.
+** ctype - nswap
 */
 
-void nswap(char *c1, char *c2)
-{
-    char c = *c2;
+#include <nep/nctype.h>
 
-    *c1 = *c2;
-    *c2 = c;
+void nswap(void *va, void *vb, nsize_t i)
+{
+    uint8_t tmp;
+    uint8_t *a = va;
+    uint8_t *b = vb;
+
+    while (i--) {
+        tmp = a[i];
+        a[i] = b[i];
+        b[i] = tmp;
+    }
 }

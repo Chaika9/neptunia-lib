@@ -1,19 +1,22 @@
 /*
-** EPITECH PROJECT, 2020
-** LibC
+** EPITECH PROJECT, 2021
+** neptunia-lib
 ** File description:
-** list - hashmap/delete.
+** list - hashmap/delete
 */
 
 #include <nep/nhashmap.h>
-#include <nep/nctype.h>
+#include <nep/nassert.h>
 #include <stdlib.h>
 
 void hashmap_clear(hashmap_t *list)
 {
-    hashmap_node_t *node = list->head;
-    hashmap_node_t *next;
+    hashmap_node_t *node, *next;
 
+    nassert(list == NULL && "[list] -> NullPointer!");
+    if (list == NULL)
+        return;
+    node = list->head;
     while (node) {
         next = node->next;
         free(node);
@@ -26,6 +29,9 @@ void hashmap_clear(hashmap_t *list)
 
 void hashmap_free(hashmap_t *list)
 {
+    nassert(list == NULL && "[list] -> NullPointer!");
+    if (list == NULL)
+        return;
     hashmap_clear(list);
     free(list);
 }

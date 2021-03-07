@@ -1,15 +1,17 @@
 /*
-** EPITECH PROJECT, 2020
-** LibC
+** EPITECH PROJECT, 2021
+** neptunia-lib
 ** File description:
-** assert.
+** assert
 */
 
 #include <nep/nprintf.h>
 
-void local_assert_func(const char *file, int line, const char *func, \
-const char *failedexpr)
+void l_assert_fail(const char *expr, const char *filename, \
+int line, void (*func)(const char *))
 {
-    nfprintf(stderr, "Assertion failed in %s:%d (%s): %s\n", file, line, func, \
-    failedexpr);
+    nfprintf(stderr, "Assertion failed in [%s:%d] -> (%s)\n", filename, line, \
+    expr);
+    if (func != NULL)
+        func(NULL);
 }

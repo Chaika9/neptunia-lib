@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2020
-** LibC
+** EPITECH PROJECT, 2021
+** neptunia-lib
 ** File description:
-** math - npow, nlpow.
+** math - npow, nlpow
 */
 
 #include <nep/nctype.h>

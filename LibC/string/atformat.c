@@ -1,18 +1,18 @@
 /*
-** EPITECH PROJECT, 2020
-** LibC
+** EPITECH PROJECT, 2021
+** neptunia-lib
 ** File description:
-** string - at_check_format.
+** string - l_at_check_format
 */
 
 #include <nep/nctype.h>
 
-long local_at_check_format(const char *str, boolean *isneg)
+long l_at_check_format(const char *str, boolean *isneg)
 {
     long index;
     int pair;
 
-    for (index = 0; nisspace(*str) || (!nisdigit(*str) && !nissign(*str)); \
+    for (index = 0; nisspace(*str) || (!nisdigit(*str) && !nissign(*str));
     str++) {
         if (*(str + 1) == '\0')
             return (-1);

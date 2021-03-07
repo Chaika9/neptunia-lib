@@ -1,6 +1,6 @@
 /*
-** EPITECH PROJECT, 2020
-** LibC
+** EPITECH PROJECT, 2021
+** neptunia-lib
 ** File description:
 ** header - hashmap
 */
@@ -10,44 +10,43 @@
 #include <nep/nctype.h>
 #include <nep/nlist.h>
 
-#ifndef	__NEP_HASHMAP_H
-#define	__NEP_HASHMAP_H
-
 typedef struct hashmap_node {
     struct hashmap_node *next;
     struct hashmap_node *prev;
-    const char *key;
+    char *key;
     uint hash;
     void *value;
     void *host;
 } hashmap_node_t;
 
-typedef struct hashmap {
+typedef struct hashmap_s {
     hashmap_node_t *head;
     hashmap_node_t *tail;
     nsize_t length;
-    void (*print)(char **, struct hashmap *);
+    void (*print)(char **, struct hashmap_s *);
 } hashmap_t;
 
-#define hashmap_foreach(node, list) \
-    for (hashmap_node_t *node = (list)->head; node != NULL; node = node->next)
+#define hashmap_foreach(list, node) \
+    for (hashmap_node_t *node = (list)->head; node; node = node->next)
 
 extern hashmap_t *hashmap_create(void);
 
-extern uint local_hashmap_str_hash(const char *key);
+extern uint64_t l_hashmap_hash(char const *key);
 
 extern void hashmap_clear(hashmap_t *list);
 extern void hashmap_free(hashmap_t *list);
 
-extern void hashmap_append(hashmap_t *list, hashmap_node_t *node);
-extern hashmap_node_t *hashmap_add(hashmap_t *list, const char *key, \
-void *value);
-extern void hashmap_append_before(hashmap_t *list, hashmap_node_t *after, \
+extern void hashmap_add_node(hashmap_t *list, hashmap_node_t *node);
+extern void hashmap_add_node_before(hashmap_t *list, hashmap_node_t *after, \
 hashmap_node_t *node);
-extern hashmap_node_t *hashmap_add_before(hashmap_t *list, \
-hashmap_node_t *after, const char *key, void *value);
 
-extern hashmap_node_t *hashmap_get(hashmap_t *list, const char *key);
+extern hashmap_node_t *hashmap_add(hashmap_t *list, char const *key, \
+void *value);
+extern hashmap_node_t *hashmap_add_before(hashmap_t *list, \
+hashmap_node_t *after, char const *key, void *value);
+
+extern void *hashmap_get_value(hashmap_t *list, char const *key);
+extern hashmap_node_t *hashmap_get(hashmap_t *list, char const *key);
 extern hashmap_node_t *hashmap_find(hashmap_t *list, void *value);
 
 extern hashmap_t *hashmap_copy(hashmap_t *original);
@@ -63,5 +62,3 @@ extern int hashmap_cmp_str(hashmap_node_t *n1, hashmap_node_t *n2);
 extern int hashmap_cmp_int(hashmap_node_t *n1, hashmap_node_t *n2);
 
 extern void hashmap_print_str(char **_buf, hashmap_t *list);
-
-#endif

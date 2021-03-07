@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2020
 ** LibC
 ** File description:
-** string - nstrcat, nstrncat, nstrbcat.
+** string - nstrcat, nstrncat.
 */
 
 #include <nep/nstring.h>
@@ -15,7 +15,7 @@ char *nstrcat(char *dest, const char *src)
     for (end = dest; *end; end++);
     while (*src)
         *end++ = *src++;
-    *end = '\0';
+    *end = 0;
     return dest;
 }
 
@@ -26,14 +26,6 @@ char *nstrncat(char *dest, const char *src, nsize_t size)
     for (end = dest; *end; end++);
     for (nsize_t i = 0; *src && i < size; i++)
         *end++ = *src++;
-    *end = '\0';
-    return dest;
-}
-
-char *nstrbcat(char *dest, const char *src)
-{
-    nstrrev(dest);
-    nstrcat(dest, src);
-    nstrrev(dest);
+    *end = 0;
     return dest;
 }

@@ -1,26 +1,37 @@
 /*
-** EPITECH PROJECT, 2020
-** LibC
+** EPITECH PROJECT, 2021
+** neptunia-lib
 ** File description:
-** list - array/print.
+** list - hashmap/print
 */
 
-#include <nep/nlist.h>
+#include <nep/nhashmap.h>
 #include <nep/nstring.h>
 #include <nep/nprintf.h>
 
-#include <stdio.h>
+PRIVATE void print_key(char **_buf, char const *key)
+{
+    char *buf = *_buf;
 
-void list_print_str(char **_buf, list_t *list)
+    nstrbuf(&buf, "\"");
+    nstrbuf(&buf, key);
+    nstrbuf(&buf, "\":");
+    *_buf = buf;
+}
+
+void hashmap_print_str(char **_buf, hashmap_t *list)
 {
     char *buf = *_buf;
 
     *buf++ = '{';
-    list_foreach(node, list) {
+    hashmap_foreach(list, node) {
         if (node->value == NULL) {
             nstrbuf(&buf, "(null)");
         } else {
+            print_key(&buf, (char *)node->key);
+            nstrbuf(&buf, "\"");
             nstrbuf(&buf, (char *)node->value);
+            nstrbuf(&buf, "\"");
         }
         if (node->next)
             nstrbuf(&buf, ", ");
@@ -29,15 +40,16 @@ void list_print_str(char **_buf, list_t *list)
     *_buf = buf;
 }
 
-void list_print_int(char **_buf, list_t *list)
+void hashmap_print_int(char **_buf, hashmap_t *list)
 {
     char *buf = *_buf;
 
     *buf++ = '{';
-    list_foreach(node, list) {
+    hashmap_foreach(list, node) {
         if (node->value == NULL) {
             nstrbuf(&buf, "(null)");
         } else {
+            print_key(&buf, (char *)node->key);
             nullbuf(&buf, *((int *)node->value), "0123456789");
         }
         if (node->next)

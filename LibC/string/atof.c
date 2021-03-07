@@ -28,10 +28,10 @@ double natof(const char *str)
 {
     double n = 0.0;
     boolean isneg = FALSE;
-    long index = local_at_check_format(str, &isneg);
+    long index = l_at_check_format(str, &isneg);
 
     if (index == -1)
-        return (0);
+        return 0;
     for (long i = 0; i < index; i++)
         str++;
     while (nisdigit(*str))

@@ -1,14 +1,11 @@
 /*
-** EPITECH PROJECT, 2020
-** LibC
+** EPITECH PROJECT, 2021
+** neptunia-lib
 ** File description:
 ** header - ctype
 */
 
 #pragma once
-
-#ifndef	__NEP_CTYPE_H
-#define	__NEP_CTYPE_H
 
 typedef signed char int8_t;
 typedef unsigned char uint8_t;
@@ -60,6 +57,6 @@ extern int nisupper(int c);
 extern int ntolower(int c);
 extern int ntoupper(int c);
 
-extern void nswap(char *c1, char *c2);
+extern void nswap(void *va, void *vb, nsize_t i);
 
-#endif
+#define SWAP(a, b) nswap(&(a), &(b), sizeof(a))

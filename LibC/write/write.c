@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2020
-** LibC
+** EPITECH PROJECT, 2021
+** neptunia-lib
 ** File description:
-** write.
+** write
 */
 
 #include <nep/nctype.h>
@@ -11,5 +11,5 @@
 
 nsize_t nwrite(int fd, const char *buf)
 {
-    return write(fd, buf, nstrlen(buf));
+    return (write(fd, buf, nstrlen(buf)));
 }

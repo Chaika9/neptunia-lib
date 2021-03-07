@@ -7,9 +7,9 @@
 
 #include <nep/nctype.h>
 
-uint local_hashmap_str_hash(const char *key)
+uint64_t l_hashmap_hash(char const *key)
 {
-    uint hash;
+    uint64_t hash;
 
     for (hash = 0; *key; key++)
         hash = *key + (hash << 6) + (hash << 16) - hash;

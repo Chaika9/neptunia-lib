@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2020
-** LibC
+** EPITECH PROJECT, 2021
+** neptunia-lib
 ** File description:
-** math - nabs, nlabs, nllabs, nfabs.
+** math - nabs, nlabs, nllabs, nfabs
 */
 
 int nabs(int value)

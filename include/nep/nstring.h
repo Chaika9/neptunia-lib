@@ -9,9 +9,6 @@
 
 #include <nep/nctype.h>
 
-#ifndef	__NEP_STRING_H
-#define	__NEP_STRING_H
-
 extern int natoi(const char *str);
 extern double natof(const char *str);
 
@@ -44,6 +41,4 @@ extern boolean nstr_isdigit(char *str);
 extern void nstrbuf(char **buf, const char *str);
 extern void nullbuf(char **buf, ullong value, const char *base);
 
-extern long local_at_check_format(const char *str, boolean *isneg);
-
-#endif
+extern long l_at_check_format(const char *str, boolean *isneg);

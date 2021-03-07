@@ -17,6 +17,6 @@ char *nstrrev(char *str)
         str[i - 1] = str[len - i];
         str[len - i] = str[len];
     }
-    str[len] = '\0';
+    str[len] = 0;
     return str;
 }
