@@ -11,7 +11,7 @@
 #include <nep/nva_list.h>
 #include <nep/nctype.h>
 
-void local_print_float(nprintf_param_t *p, va_list args)
+void l_print_float(nprintf_param_t *p, va_list args)
 {
     double val = va_arg(args, double);
 

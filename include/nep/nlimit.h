@@ -7,9 +7,6 @@
 
 #pragma once
 
-#ifndef	__NEP_LIMIT_H
-#define	__NEP_LIMIT_H
-
 #define CHAR_MAX __SCHAR_MAX__
 #define SHORT_MAX __SHRT_MAX__
 #define INT_MAX __INT_MAX__
@@ -28,5 +25,3 @@
 #define LONG_LONG_MAX  __LONG_LONG_MAX__
 #define LONG_LONG_MIN  (-__LONG_LONG_MAX__-1LL)
 #define ULONG_LONG_MAX (__LONG_LONG_MAX__*2ULL+1ULL)
-
-#endif

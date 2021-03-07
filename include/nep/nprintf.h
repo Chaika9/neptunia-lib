@@ -7,12 +7,10 @@
 
 #pragma once
 
-#include <stdio.h>
+#include <nep/nhashmap.h>
 #include <nep/nva_list.h>
 #include <nep/nctype.h>
-
-#ifndef	__NEP_PRINTF_H
-#define	__NEP_PRINTF_H
+#include <stdio.h>
 
 #ifndef	NPRINTF_BUFFER_SIZE
 #define NPRINTF_BUFFER_SIZE (1024)
@@ -31,43 +29,46 @@ typedef struct {
     boolean minos;
 } nprintf_param_t;
 
-extern nsize_t nprintf(const char *format, ...);
-extern nsize_t nvprintf(const char *format, va_list args);
+extern nsize_t nprintf(char const *format, ...);
+extern nsize_t nvprintf(char const *format, va_list args);
 
-extern nsize_t nsprintf(char *buf, const char *format, ...);
-extern nsize_t nvsprintf(char *buf, const char *format, va_list args);
+extern nsize_t nsprintf(char *buf, char const *format, ...);
+extern nsize_t nvsprintf(char *buf, char const *format, va_list args);
 
-extern nsize_t nfprintf(FILE *stream, const char *format, ...);
-extern nsize_t nvfprintf(FILE *stream, const char *format, va_list args);
+extern nsize_t nfprintf(FILE *stream, char const *format, ...);
+extern nsize_t nvfprintf(FILE *stream, char const *format, va_list args);
 
-extern void local_parse_param(const char **c, nprintf_param_t *p);
+extern void l_parse_param(char const **c, nprintf_param_t *p);
 
-extern void local_parse_param_precision(const char **ch, nprintf_param_t *p);
-extern void local_parse_param_big(const char **ch, nprintf_param_t *p);
-extern void local_parse_param_sign(const char **ch, nprintf_param_t *p);
-extern void local_parse_param_wight(const char **ch, nprintf_param_t *p);
+extern void l_parse_param_precision(char const **ch, nprintf_param_t *p);
+extern void l_parse_param_big(char const **ch, nprintf_param_t *p);
+extern void l_parse_param_sign(char const **ch, nprintf_param_t *p);
+extern void l_parse_param_wight(char const **ch, nprintf_param_t *p);
 
-extern void local_print_char(nprintf_param_t *p, va_list args);
-extern void local_print_str(nprintf_param_t *p, va_list args);
-extern void local_print_dec(nprintf_param_t *p, va_list args);
-extern void local_print_ulong(nprintf_param_t *p, va_list args);
-extern void local_print_hex(nprintf_param_t *p, va_list args);
-extern void local_print_octal(nprintf_param_t *p, va_list args);
-extern void local_print_binary(nprintf_param_t *p, va_list args);
-extern void local_print_float(nprintf_param_t *p, va_list args);
-extern void local_print_ptr(nprintf_param_t *p, va_list args);
-extern void local_print_list(nprintf_param_t *p, va_list args);
-extern void local_print_hashmap(nprintf_param_t *p, va_list args);
+extern void l_print_char(nprintf_param_t *p, va_list args);
+extern void l_print_str(nprintf_param_t *p, va_list args);
+extern void l_print_dec(nprintf_param_t *p, va_list args);
+extern void l_print_ulong(nprintf_param_t *p, va_list args);
+extern void l_print_hex(nprintf_param_t *p, va_list args);
+extern void l_print_octal(nprintf_param_t *p, va_list args);
+extern void l_print_binary(nprintf_param_t *p, va_list args);
+extern void l_print_float(nprintf_param_t *p, va_list args);
+extern void l_print_ptr(nprintf_param_t *p, va_list args);
+extern void l_print_list(nprintf_param_t *p, va_list args);
+extern void l_print_hashmap(nprintf_param_t *p, va_list args);
 
-extern nsize_t nbprintf(const char *format, ...);
-extern void nbprintf_register_flag(const char *flag, void(*func)());
+#define BPRINTF_REG() \
+    hashmap_t *nbprintf_balises;
 
-extern void local_nbprintf_char(char **buf, va_list args);
-extern void local_nbprintf_string(char **buf, va_list args);
-extern void local_nbprintf_int(char **buf, va_list args);
-extern void local_nbprintf_long(char **buf, va_list args);
-extern void local_nbprintf_llong(char **buf, va_list args);
-extern void local_nbprintf_ullong(char **buf, va_list args);
-extern void local_nbprintf_list(char **buf, va_list args);
+extern hashmap_t *nbprintf_balises;
 
-#endif
+extern nsize_t nbprintf(char const *format, ...);
+extern void nbprintf_register_balise(char const *flag, void(*func)());
+
+extern void l_nbprintf_char(char **buf, va_list args);
+extern void l_nbprintf_string(char **buf, va_list args);
+extern void l_nbprintf_int(char **buf, va_list args);
+extern void l_nbprintf_long(char **buf, va_list args);
+extern void l_nbprintf_llong(char **buf, va_list args);
+extern void l_nbprintf_ullong(char **buf, va_list args);
+extern void l_nbprintf_list(char **buf, va_list args);

@@ -10,7 +10,7 @@
 #include <nep/nva_list.h>
 #include <nep/nctype.h>
 
-void local_print_str(nprintf_param_t *p, va_list args)
+void l_print_str(nprintf_param_t *p, va_list args)
 {
     char *str = va_arg(args, char *);
 
@@ -21,7 +21,7 @@ void local_print_str(nprintf_param_t *p, va_list args)
     nstrbuf(&p->buf, str);
 }
 
-void local_print_char(nprintf_param_t *p, va_list args)
+void l_print_char(nprintf_param_t *p, va_list args)
 {
     *(p->buf)++ = (char)va_arg(args, int);
 }

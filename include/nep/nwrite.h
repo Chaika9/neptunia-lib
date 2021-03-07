@@ -9,9 +9,4 @@
 
 #include <nep/nctype.h>
 
-#ifndef	__NEP_WRITE_H
-#define	__NEP_WRITE_H
-
 extern nsize_t nwrite(int fd, const char *buf);
-
-#endif

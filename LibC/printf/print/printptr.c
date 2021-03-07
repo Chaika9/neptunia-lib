@@ -10,7 +10,7 @@
 #include <nep/nva_list.h>
 #include <nep/nctype.h>
 
-void local_print_ptr(nprintf_param_t *p, va_list args)
+void l_print_ptr(nprintf_param_t *p, va_list args)
 {
     void *ptr = va_arg(args, void *);
 

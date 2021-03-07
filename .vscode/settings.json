@@ -17,6 +17,10 @@
         "nhashmap.h": "c",
         "nctype.h": "c",
         "random": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "nprintf.h": "c",
+        "nstring.h": "c",
+        "nwrite.h": "c",
+        "nva_list.h": "c"
     }
 }

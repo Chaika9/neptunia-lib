@@ -9,7 +9,7 @@
 #include <nep/nmath.h>
 #include <nep/nva_list.h>
 
-void local_nbprintf_int(char **buf, va_list args)
+void l_nbprintf_int(char **buf, va_list args)
 {
     int val = va_arg(args, int);
 
@@ -18,7 +18,7 @@ void local_nbprintf_int(char **buf, va_list args)
     nullbuf(buf, ABS(val), "0123456789");
 }
 
-void local_nbprintf_long(char **buf, va_list args)
+void l_nbprintf_long(char **buf, va_list args)
 {
     long val = va_arg(args, long);
 
@@ -27,7 +27,7 @@ void local_nbprintf_long(char **buf, va_list args)
     nullbuf(buf, ABS(val), "0123456789");
 }
 
-void local_nbprintf_llong(char **buf, va_list args)
+void l_nbprintf_llong(char **buf, va_list args)
 {
     long long val = va_arg(args, long long);
 

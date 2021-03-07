@@ -19,11 +19,11 @@ PRIVATE void parse_param_alt(const char **ch, nprintf_param_t *p)
     }
 }
 
-void local_parse_param(const char **ch, nprintf_param_t *p)
+void l_parse_param(const char **ch, nprintf_param_t *p)
 {
     parse_param_alt(ch, p);
-    local_parse_param_sign(ch, p);
-    local_parse_param_wight(ch, p);
-    local_parse_param_precision(ch, p);
-    local_parse_param_big(ch, p);
+    l_parse_param_sign(ch, p);
+    l_parse_param_wight(ch, p);
+    l_parse_param_precision(ch, p);
+    l_parse_param_big(ch, p);
 }

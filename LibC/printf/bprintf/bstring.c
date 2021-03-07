@@ -8,7 +8,7 @@
 #include <nep/nstring.h>
 #include <nep/nva_list.h>
 
-void local_nbprintf_string(char **buf, va_list args)
+void l_nbprintf_string(char **buf, va_list args)
 {
     char *str = va_arg(args, char *);
 

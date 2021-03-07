@@ -9,9 +9,6 @@
 
 #include <nep/nctype.h>
 
-#ifndef	__NEP_MATH_H
-#define	__NEP_MATH_H
-
 extern int nabs(int value);
 extern long nlabs(long value);
 extern long long nllabs(long long value);
@@ -41,10 +38,4 @@ extern double nround(double value, uint precision);
 
 #ifndef ABS
 #define ABS(val) ((val < 0) ? -val : val)
-#endif
-
-#ifndef RAND_MAX
-#define RAND_MAX (0x7FFFFFFF)
-#endif
-
 #endif

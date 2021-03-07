@@ -9,7 +9,7 @@
 #include <nep/nva_list.h>
 #include <nep/nctype.h>
 
-nsize_t nsprintf(char *buf, const char *format, ...)
+nsize_t nsprintf(char *buf, char const *format, ...)
 {
     va_list args;
     nsize_t out = 0;

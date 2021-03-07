@@ -8,7 +8,7 @@
 #include <nep/nstring.h>
 #include <nep/nva_list.h>
 
-void local_nbprintf_ullong(char **buf, va_list args)
+void l_nbprintf_ullong(char **buf, va_list args)
 {
     ullong val = va_arg(args, ullong);
 

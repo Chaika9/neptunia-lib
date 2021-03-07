@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2020
-** LibC
+** EPITECH PROJECT, 2021
+** neptunia-lib
 ** File description:
-** nprintf - bprintf.
+** nprintf - bprintf
 */
 
 #include <nep/nprintf.h>
@@ -10,29 +10,31 @@
 #include <nep/nhashmap.h>
 #include <nep/nwrite.h>
 #include <nep/nva_list.h>
+#include <nep/nmem.h>
 #include <nep/nctype.h>
 #include <stdlib.h>
 
-PRIVATE hashmap_t *flags = NULL;
-
-PRIVATE void init_flags(void)
+PRIVATE void init_balises(void)
 {
-    if (flags)
+    if (nbprintf_balises)
         return;
-    flags = hashmap_create();
-    nbprintf_register_flag("char", &local_nbprintf_char);
-    nbprintf_register_flag("str", &local_nbprintf_string);
-    nbprintf_register_flag("int", &local_nbprintf_int);
-    nbprintf_register_flag("long", &local_nbprintf_long);
-    nbprintf_register_flag("llong", &local_nbprintf_llong);
-    nbprintf_register_flag("uchar", &local_nbprintf_ullong);
-    nbprintf_register_flag("uint", &local_nbprintf_ullong);
-    nbprintf_register_flag("ulong", &local_nbprintf_ullong);
-    nbprintf_register_flag("ullong", &local_nbprintf_ullong);
-    nbprintf_register_flag("list", &local_nbprintf_list);
+    nbprintf_balises = hashmap_create();
+    nbprintf_register_balise("char", &l_nbprintf_char);
+    nbprintf_register_balise("char *", &l_nbprintf_string);
+    nbprintf_register_balise("str", &l_nbprintf_string);
+    nbprintf_register_balise("string", &l_nbprintf_string);
+    nbprintf_register_balise("int", &l_nbprintf_int);
+    nbprintf_register_balise("long", &l_nbprintf_long);
+    nbprintf_register_balise("llong", &l_nbprintf_llong);
+    nbprintf_register_balise("uchar", &l_nbprintf_ullong);
+    nbprintf_register_balise("uint", &l_nbprintf_ullong);
+    nbprintf_register_balise("ulong", &l_nbprintf_ullong);
+    nbprintf_register_balise("ullong", &l_nbprintf_ullong);
+    nbprintf_register_balise("list", &l_nbprintf_list);
+    nbprintf_register_balise("hashmap", &l_nbprintf_list);
 }
 
-PRIVATE char *get_flag(const char *_c)
+PRIVATE char *get_balise(const char *_c)
 {
     const char *c = _c;
     uint64_t start = (uint64_t)&(*c) + 2;
@@ -42,30 +44,29 @@ PRIVATE char *get_flag(const char *_c)
     _c += 2;
     while (*c != '}' && *c != 0)
         c++;
-    flag = malloc((uint64_t)&(*c) - start + 1);
-    nmemset(flag, 0, (uint64_t)&(*c) - start + 1);
+    flag = ncalloc(1, (uint64_t)&(*c) - start + 1);
     nmemcpy(flag, _c, (uint64_t)&(*c) - start);
     return flag;
 }
 
-nsize_t nbvsprintf(char *buf, const char *format, va_list args)
+nsize_t nbvsprintf(char *buf, char const *format, va_list args)
 {
     char *b = buf;
     hashmap_node_t *node;
-    char *flag;
+    char *balise;
 
-    init_flags();
+    init_balises();
     for (const char *c = format; *c; c++) {
         if (*c == '/' && *(c + 1) == '{') {
-            flag = get_flag(c);
-            node = hashmap_get(flags, flag);
+            balise = get_balise(c);
+            node = hashmap_get(nbprintf_balises, balise);
             if (node) {
                 ((void(*)())node->value)(&b, args);
-                c += nstrlen(flag) + 2;
+                c += nstrlen(balise) + 2;
             } else {
                 *b++ = *c;
             }
-            free(flag);
+            free(balise);
             continue;
         }
         *b++ = *c;
@@ -73,19 +74,18 @@ nsize_t nbvsprintf(char *buf, const char *format, va_list args)
     return 0;
 }
 
-void nbprintf_register_flag(const char *flag, void(*func)())
+void nbprintf_register_balise(char const *balise, void(*func)())
 {
-    init_flags();
-    hashmap_add(flags, flag, func);
+    init_balises();
+    hashmap_add(nbprintf_balises, balise, func);
 }
 
-nsize_t nbprintf(const char *format, ...)
+nsize_t nbprintf(char const *format, ...)
 {
     va_list args;
-    char *buf = malloc(NPRINTF_BUFFER_SIZE);
+    char *buf = ncalloc(1, NPRINTF_BUFFER_SIZE);
     nsize_t out = 0;
 
-    nmemset(buf, 0, NPRINTF_BUFFER_SIZE);
     va_start(args, format);
     nbvsprintf(buf, format, args);
     va_end(args);
@@ -93,3 +93,5 @@ nsize_t nbprintf(const char *format, ...)
     free(buf);
     return out;
 }
+
+BPRINTF_REG();

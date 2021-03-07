@@ -7,7 +7,7 @@
 
 #include <nep/nva_list.h>
 
-void local_nbprintf_char(char **buf, va_list args)
+void l_nbprintf_char(char **buf, va_list args)
 {
     int ch = va_arg(args, int);
 
