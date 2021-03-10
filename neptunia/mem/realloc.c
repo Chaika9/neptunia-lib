@@ -7,6 +7,7 @@
 
 #include <nep/nctype.h>
 #include <nep/nstring.h>
+#include <nep/nmem.h>
 #include <stdlib.h>
 
 void *nrealloc(void *ptr, nsize_t size)
@@ -18,8 +19,8 @@ void *nrealloc(void *ptr, nsize_t size)
         return NULL;
     }
     if (ptr == NULL)
-        return (malloc(size));
-    newmem = malloc(size);
+        return (ncalloc(1, size));
+    newmem = ncalloc(1, size);
     if (newmem == NULL)
         return NULL;
     nmemcpy(newmem, ptr, size);

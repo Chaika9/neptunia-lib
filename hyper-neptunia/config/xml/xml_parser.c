@@ -2,65 +2,55 @@
 ** EPITECH PROJECT, 2021
 ** hyper-neptunia
 ** File description:
-** config/xml -
+** config/xml - xml_get_balise, xml_get_balises,
+** xml_get_value, xml_get_data
 */
 
 #include <hnep/nstring.h>
 #include <nep/nstring.h>
 #include <stdlib.h>
 
-#include <stdio.h>
-
 char *xml_get_balise(char const *xml, char const *balise_name)
 {
-    char *bfname = string_create("<");
-    char *ptr;
+    char *fbalise = string_format("<%s.*>", balise_name);
+    char *balise = string_matches(xml, fbalise);
 
-    bfname = string_concat_wa(bfname, balise_name);
-    bfname = string_concat_wa(bfname, ".*>");
-    ptr = string_matches(xml, bfname);
-    free(bfname);
-    return ptr;
+    free(fbalise);
+    return balise;
 }
 
 char **xml_get_balises(char const *xml, char const *balise_name)
 {
-    char *bfname = string_create("<");
-    char **ptrs;
+    char *fbalise = string_format("<%s.*>", balise_name);
+    char **balises = string_matches_to_table(xml, fbalise);
 
-    bfname = string_concat_wa(bfname, balise_name);
-    bfname = string_concat_wa(bfname, ".*>");
-    ptrs = string_matches_to_table(xml, bfname);
-    free(bfname);
-    return ptrs;
+    free(fbalise);
+    return balises;
 }
 
-char *xml_get_value(char const *balise_ptr, char const *value_name)
+char *xml_get_attribute(char const *balise, char const *attribute_name)
 {
-    char *vfname, *ptr, *value;
+    char *fattribute, *attribute;
 
-    if (balise_ptr == NULL)
+    if (balise == NULL)
         return NULL;
-    vfname = string_create(value_name);
-    vfname = string_concat_wa(vfname, "=\"");
-    ptr = string_matches(balise_ptr, vfname);
-    if (ptr == NULL) {
-        free(vfname);
+    fattribute = string_format("%s=\"", attribute_name);
+    attribute = string_matches(balise, fattribute);
+    free(fattribute);
+    if (attribute == NULL)
         return NULL;
-    }
-    ptr += nstrlen(value_name) + 2;
-    value = string_copy_at_string_wa(ptr, "\"");
-    free(vfname);
-    return value;
+    attribute += string_index_of(attribute, "\"") + 1;
+    attribute = string_copy_at_string_wa(attribute, "\"");
+    return attribute;
 }
 
-char *xml_get_data(char const *balise_ptr)
+char *xml_get_content(char const *balise)
 {
     char *ptr;
 
-    if (balise_ptr == NULL)
+    if (balise == NULL)
         return NULL;
-    ptr = string_matches(balise_ptr, ">") + 1;
+    ptr = string_matches(balise, ">") + 1;
     if (ptr == NULL)
         return NULL;
     return (string_copy_at_string_wa(ptr, "</"));

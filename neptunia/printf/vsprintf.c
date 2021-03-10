@@ -27,7 +27,7 @@ PRIVATE struct nprintf_flag flags[] = {
     {'f', l_print_float},
     {'p', l_print_ptr},
     {'z', l_print_list}, {'y', l_print_hashmap},
-    {'\0', NULL}
+    {0, NULL}
 };
 
 PRIVATE void check_flag(char flag, nprintf_param_t *param, va_list args)
@@ -55,6 +55,6 @@ nsize_t nvsprintf(char *buf, char const *format, va_list args)
         check_flag(ntolower(*c), &param, args);
         b = param.buf;
     }
-    *b = '\0';
+    *b = 0;
     return (b - buf);
 }

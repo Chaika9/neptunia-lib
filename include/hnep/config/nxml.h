@@ -2,12 +2,12 @@
 ** EPITECH PROJECT, 2021
 ** hyper-neptunia
 ** File description:
-** header - string
+** header - nxml
 */
 
 #pragma once
 
 char *xml_get_balise(char const *xml, char const *balise_name);
 char **xml_get_balises(char const *xml, char const *balise_name);
-char *xml_get_value(char const *balise_ptr, char const *value_name);
-char *xml_get_data(char const *balise_ptr);
+char *xml_get_attribute(char const *balise, char const *attribute_name);
+char *xml_get_content(char const *balise);

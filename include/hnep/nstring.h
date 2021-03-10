@@ -8,6 +8,7 @@
 #pragma once
 
 #include <nep/nctype.h>
+#include <nep/nva_list.h>
 
 char *string_create(char const *str);
 
@@ -43,6 +44,8 @@ char *string_concat_wa(char *dest, const char *str);
 char **string_matches_to_table(char const *str, char const *regex);
 char *string_matches(char const *str, char const *regex);
 
+char *string_format(char const *format, ...);
+
 typedef struct {
     char flag;
     char *(*handler)(char const *, char **);
@@ -50,6 +53,8 @@ typedef struct {
 
 int l_isregexflag(int c);
 regex_t l_get_regex_flag(char flag);
+
+char *l_format_string(char *buffer, nsize_t *size, va_list args);
 
 char *regex_test(char const *str, char const *regex);
 

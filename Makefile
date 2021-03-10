@@ -95,8 +95,10 @@ SRC_NEPTUNIA =	neptunia/assert/assert.c \
 				\
 				neptunia/write/write.c \
 
-SRC_HYPER_NEPTUNIA = 	hyper-neptunia/config/xml/xml_parser.c \
+SRC_HYPER_NEPTUNIA = 	hyper-neptunia/config/json/json_parser.c \
+						hyper-neptunia/config/xml/xml_parser.c \
 						\
+						hyper-neptunia/string/format/format_string.c \
 						hyper-neptunia/string/regex/regex_find.c \
 						hyper-neptunia/string/regex/regex_skip.c \
 						hyper-neptunia/string/regex/regex_test.c \
@@ -107,6 +109,7 @@ SRC_HYPER_NEPTUNIA = 	hyper-neptunia/config/xml/xml_parser.c \
 						hyper-neptunia/string/string_create.c \
 						hyper-neptunia/string/string_equals_at.c \
 						hyper-neptunia/string/string_equals.c \
+						hyper-neptunia/string/string_format.c \
 						hyper-neptunia/string/string_index.c \
 						hyper-neptunia/string/string_matches.c \
 
