@@ -8,7 +8,6 @@
 #include <nep/nlist.h>
 #include <nep/nstring.h>
 #include <nep/nassert.h>
-#include <stdio.h>
 
 void list_print_str(char **_buf, list_t *list)
 {

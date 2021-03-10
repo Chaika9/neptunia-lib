@@ -23,5 +23,6 @@ void *nrealloc(void *ptr, nsize_t size)
     if (newmem == NULL)
         return NULL;
     nmemcpy(newmem, ptr, size);
+    free(ptr);
     return newmem;
 }

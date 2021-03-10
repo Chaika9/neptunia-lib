@@ -21,6 +21,8 @@
         "nprintf.h": "c",
         "nstring.h": "c",
         "nwrite.h": "c",
-        "nva_list.h": "c"
+        "nva_list.h": "c",
+        "stdio.h": "c",
+        "nmem.h": "c"
     }
 }

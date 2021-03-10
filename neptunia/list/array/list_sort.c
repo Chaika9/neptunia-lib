@@ -9,8 +9,6 @@
 #include <nep/nstring.h>
 #include <nep/nassert.h>
 
-#include <stdio.h>
-
 void list_sort(list_t *list, int(*cmp)())
 {
     list_node_t *node;

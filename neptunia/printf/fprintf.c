@@ -11,7 +11,6 @@
 #include <nep/nmem.h>
 #include <nep/nctype.h>
 #include <stdlib.h>
-#include <stdio.h>
 
 nsize_t nfprintf(FILE *stream, char const *format, ...)
 {
