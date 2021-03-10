@@ -10,8 +10,6 @@
 #include <nep/nmem.h>
 #include <nep/nstring.h>
 
-#include <stdio.h>
-
 char *l_format_string(char *buffer, nsize_t *size, va_list args)
 {
     char *str = va_arg(args, char *);

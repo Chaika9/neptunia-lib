@@ -11,8 +11,6 @@
 #include <nep/nstring.h>
 #include <stdlib.h>
 
-#include <stdio.h>
-
 struct string_format_s {
     char flag;
     char *(*handler)(char *, nsize_t *, va_list);
