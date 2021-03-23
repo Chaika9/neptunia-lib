@@ -8,6 +8,8 @@
 #include <hnep/nstring.h>
 #include <nep/nmem.h>
 
+#include <stdio.h>
+
 PRIVATE regex_t regex_flags[] = {
     {'.', regex_skip},
     {0, NULL}
@@ -35,14 +37,17 @@ char **string_matches_to_table(char const *str, char const *regex)
 {
     char **ptrs = NULL;
     char *ptr = (char *)str;
+    int i;
 
-    for (int i = 1; 1; i++) {
+    for (i = 1; 1; i++) {
         ptr = regex_test(ptr + i - 1, regex);
         if (ptr == NULL)
             break;
-        ptrs = nrealloc(ptrs, sizeof(char *) * i);
+        ptrs = nrealloc(ptrs, sizeof(char *) * i + 1);
         ptrs[i - 1] = ptr;
     }
+    if (ptrs != NULL)
+        ptrs[i - 1] = 0;
     return ptrs;
 }
 
