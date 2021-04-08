@@ -16,6 +16,14 @@
 #define NPRINTF_BUFFER_SIZE (1024)
 #endif
 
+#ifdef _IO_USE_OLD_IO_FILE
+#define IO_FILENO(stream) ((stream)->_file)
+#elif defined(_FSTDIO)
+#define IO_FILENO(stream) ((stream)->_file)
+#else
+#define IO_FILENO(stream) ((stream)->_fileno)
+#endif
+
 typedef struct {
     va_list *args;
     char *buf;
