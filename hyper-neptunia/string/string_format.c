@@ -18,7 +18,6 @@ struct string_format_s {
 
 PRIVATE struct string_format_s formats[] = {
     {'s', l_format_string},
-    {'i', l_format_int},
     {0, NULL}
 };
 

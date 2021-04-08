@@ -15,7 +15,5 @@ int line, void (*func)(const char *));
 #endif
 
 #define nassert(expr) \
-    if (!(expr)) { \
-        ; \
-    } else \
+    if (expr) \
         l_assert_fail(#expr, __FILE__, __LINE__, ASSERT_FUNCTION);
