@@ -5,7 +5,8 @@
 ** header - nprintf
 */
 
-#pragma once
+#ifndef _NEP_PRINTF_H
+#define _NEP_PRINTF_H
 
 #include <nep/nhashmap.h>
 #include <nep/nva_list.h>
@@ -27,14 +28,14 @@
 typedef struct {
     va_list *args;
     char *buf;
-    boolean isupper;
-    boolean alt;
+    bool isupper;
+    bool alt;
     uint precision;
     uint wight;
     char w_ch;
     int big;
-    boolean plus;
-    boolean minos;
+    bool plus;
+    bool minos;
 } nprintf_param_t;
 
 extern nsize_t nprintf(char const *format, ...);
@@ -80,3 +81,5 @@ extern void l_nbprintf_long(char **buf, va_list args);
 extern void l_nbprintf_llong(char **buf, va_list args);
 extern void l_nbprintf_ullong(char **buf, va_list args);
 extern void l_nbprintf_list(char **buf, va_list args);
+
+#endif

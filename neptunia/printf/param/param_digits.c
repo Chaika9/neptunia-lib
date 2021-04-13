@@ -39,13 +39,13 @@ void l_parse_param_big(const char **ch, nprintf_param_t *p)
 
 void l_parse_param_sign(const char **ch, nprintf_param_t *p)
 {
-    p->plus = FALSE;
-    p->minos = FALSE;
+    p->plus = false;
+    p->minos = false;
     while (nissign(**ch)) {
         if (**ch == '+') {
-            p->plus = TRUE;
+            p->plus = true;
         } else if (**ch == '-') {
-            p->minos = TRUE;
+            p->minos = true;
         }
         *ch += 1;
     }
@@ -61,10 +61,10 @@ void l_parse_param_wight(const char **ch, nprintf_param_t *p)
         if (**ch == '0')
             p->w_ch = '0';
         if ((*(*ch + 1)) == '+') {
-            p->plus = TRUE;
+            p->plus = true;
             *ch += 2;
         } else if ((*(*ch + 1)) == '-') {
-            p->minos = TRUE;
+            p->minos = true;
             *ch += 2;
         }
         while (nisdigit(**ch))

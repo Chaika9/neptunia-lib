@@ -5,7 +5,8 @@
 ** header - hashmap
 */
 
-#pragma once
+#ifndef _NEP_HASHMAP_H
+#define _NEP_HASHMAP_H
 
 #include <nep/nctype.h>
 #include <nep/nlist.h>
@@ -62,3 +63,5 @@ extern int hashmap_cmp_str(hashmap_node_t *n1, hashmap_node_t *n2);
 extern int hashmap_cmp_int(hashmap_node_t *n1, hashmap_node_t *n2);
 
 extern void hashmap_print_str(char **_buf, hashmap_t *list);
+
+#endif

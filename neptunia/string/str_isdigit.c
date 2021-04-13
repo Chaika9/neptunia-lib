@@ -7,11 +7,11 @@
 
 #include <nep/nctype.h>
 
-boolean nstr_isdigit(char *str)
+bool nstr_isdigit(char *str)
 {
     while (*str) {
         if (!nisdigit(*str++))
-            return FALSE;
+            return false;
     }
-    return TRUE;
+    return true;
 }

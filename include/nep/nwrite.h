@@ -5,8 +5,11 @@
 ** header - write
 */
 
-#pragma once
+#ifndef _NEP_WRITE_H
+#define _NEP_WRITE_H
 
 #include <nep/nctype.h>
 
 extern nsize_t nwrite(int fd, const char *buf);
+
+#endif

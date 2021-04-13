@@ -5,7 +5,8 @@
 ** header - string
 */
 
-#pragma once
+#ifndef _NEP_STRING_H
+#define _NEP_STRING_H
 
 #include <nep/nctype.h>
 
@@ -30,15 +31,18 @@ extern char *nstrncpy(char *dest, const char *src, const nsize_t at);
 
 extern void *nmemcpy(void *dest, const void *src, nsize_t size);
 extern void *nmemset(void *dest, int value, nsize_t size);
+extern void *nmemmove(void *dest, const void *src, nsize_t size);
 
 extern char *nstrdup(const char *src);
 
 extern char *nstrstr(char *str, const char *find);
 
-extern boolean nstr_isalpha(char *str);
-extern boolean nstr_isdigit(char *str);
+extern bool nstr_isalpha(char *str);
+extern bool nstr_isdigit(char *str);
 
 extern void nstrbuf(char **buf, const char *str);
 extern void nullbuf(char **buf, ullong value, const char *base);
 
-extern long l_at_check_format(const char *str, boolean *isneg);
+extern long l_at_check_format(const char *str, bool *isneg);
+
+#endif

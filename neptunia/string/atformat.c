@@ -7,7 +7,7 @@
 
 #include <nep/nctype.h>
 
-long l_at_check_format(const char *str, boolean *isneg)
+long l_at_check_format(const char *str, bool *isneg)
 {
     long index;
     int pair;
@@ -23,6 +23,6 @@ long l_at_check_format(const char *str, boolean *isneg)
             pair++;
         index++;
     }
-    *isneg = pair % 2 ? TRUE : FALSE;
+    *isneg = pair % 2 ? true : false;
     return index;
 }

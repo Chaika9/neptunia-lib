@@ -5,7 +5,8 @@
 ** header - math
 */
 
-#pragma once
+#ifndef _NEP_MATH_H
+#define _NEP_MATH_H
 
 #include <nep/nctype.h>
 
@@ -38,4 +39,6 @@ extern double nround(double value, uint precision);
 
 #ifndef ABS
 #define ABS(val) ((val < 0) ? -val : val)
+#endif
+
 #endif

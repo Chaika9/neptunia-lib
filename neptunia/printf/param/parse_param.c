@@ -12,9 +12,9 @@
 
 PRIVATE void parse_param_alt(const char **ch, nprintf_param_t *p)
 {
-    p->alt = FALSE;
+    p->alt = false;
     if (**ch == '#') {
-        p->alt = TRUE;
+        p->alt = true;
         *ch += 1;
     }
 }

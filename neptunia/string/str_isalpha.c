@@ -7,11 +7,11 @@
 
 #include <nep/nctype.h>
 
-boolean nstr_isalpha(char *str)
+bool nstr_isalpha(char *str)
 {
     while (*str) {
         if (!nisalpha(*str++))
-            return FALSE;
+            return false;
     }
-    return TRUE;
+    return true;
 }

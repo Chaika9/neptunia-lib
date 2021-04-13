@@ -27,7 +27,7 @@ PRIVATE void parse_float(double *n, const char **_str)
 double natof(const char *str)
 {
     double n = 0.0;
-    boolean isneg = FALSE;
+    bool isneg = false;
     long index = l_at_check_format(str, &isneg);
 
     if (index == -1)

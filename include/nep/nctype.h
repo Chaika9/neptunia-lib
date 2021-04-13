@@ -5,7 +5,8 @@
 ** header - ctype
 */
 
-#pragma once
+#ifndef _NEP_CTYPE_H
+#define _NEP_CTYPE_H
 
 #include <stdio.h>
 
@@ -46,9 +47,11 @@ typedef unsigned long nsize_t;
 #define PRIVATE static
 #endif
 
-typedef enum {
-    FALSE, TRUE
-} boolean;
+#ifndef bool
+#define bool    _Bool
+#define true    (1)
+#define false   (0)
+#endif
 
 #define UNUSED __attribute__((unused))
 
@@ -69,3 +72,5 @@ extern int ntoupper(int c);
 extern void nswap(void *va, void *vb, nsize_t i);
 
 #define SWAP(a, b) nswap(&(a), &(b), sizeof(a))
+
+#endif

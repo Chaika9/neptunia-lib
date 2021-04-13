@@ -5,7 +5,8 @@
 ** header - string
 */
 
-#pragma once
+#ifndef _HNEP_STRING_H
+#define _HNEP_STRING_H
 
 #include <nep/nctype.h>
 #include <nep/nva_list.h>
@@ -41,6 +42,11 @@ char *string_copy_at_string_wa(char const *src, char const *atstr);
 void string_concat(char *dest, const char *str);
 char *string_concat_wa(char *dest, const char *str);
 
+char **string_split(char const *src, char const *str);
+
+char *string_remove(char *src, char const *str, bool(*cmp)());
+char *string_remove_rec(char *src, char const *str, bool(*cmp)());
+
 char **string_matches_to_table(char const *str, char const *regex);
 char *string_matches(char const *str, char const *regex);
 
@@ -60,3 +66,5 @@ char *regex_test(char const *str, char const *regex);
 
 char *regex_find(char const *str, char **regex);
 char *regex_skip(char const *str, char **regex);
+
+#endif

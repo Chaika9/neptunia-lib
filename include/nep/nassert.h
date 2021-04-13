@@ -5,7 +5,8 @@
 ** header - assert
 */
 
-#pragma once
+#ifndef _NEP_ASSERT_H
+#define _NEP_ASSERT_H
 
 extern void l_assert_fail(const char *expr, const char *filename, \
 int line, void (*func)(const char *));
@@ -17,3 +18,5 @@ int line, void (*func)(const char *));
 #define nassert(expr) \
     if (expr) \
         l_assert_fail(#expr, __FILE__, __LINE__, ASSERT_FUNCTION);
+
+#endif

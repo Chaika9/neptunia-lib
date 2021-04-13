@@ -12,7 +12,7 @@
 int natoi(const char *str)
 {
     long n = 0;
-    boolean isneg = FALSE;
+    bool isneg = false;
     long index = l_at_check_format(str, &isneg);
 
     if (index == -1)

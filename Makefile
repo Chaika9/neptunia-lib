@@ -78,6 +78,7 @@ SRC_NEPTUNIA =	neptunia/assert/assert.c \
 				neptunia/string/atof.c \
 				neptunia/string/atoi.c \
 				neptunia/string/memcpy.c \
+				neptunia/string/memmove.c \
 				neptunia/string/memset.c \
 				neptunia/string/str_isalpha.c \
 				neptunia/string/str_isdigit.c \
@@ -112,6 +113,8 @@ SRC_HYPER_NEPTUNIA = 	hyper-neptunia/config/json/json_parser.c \
 						hyper-neptunia/string/string_format.c \
 						hyper-neptunia/string/string_index.c \
 						hyper-neptunia/string/string_matches.c \
+						hyper-neptunia/string/string_remove.c \
+						hyper-neptunia/string/string_split.c \
 
 OBJ_NEPTUNIA = $(SRC_NEPTUNIA:.c=.o)
 OBJ_HYPER_NEPTUNIA = $(SRC_HYPER_NEPTUNIA:.c=.o)
