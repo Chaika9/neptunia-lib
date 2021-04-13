@@ -44,6 +44,8 @@ char *string_concat_wa(char *dest, const char *str);
 
 char **string_split(char const *src, char const *str);
 
+void string_table_free(char **table);
+
 char *string_remove(char *src, char const *str, bool(*cmp)());
 char *string_remove_rec(char *src, char const *str, bool(*cmp)());
 
