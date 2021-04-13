@@ -13,6 +13,6 @@ void string_table_free(char **table)
     if (table == NULL)
         return;
     for (int i = 0; table[i]; i++)
-        free(table);
+        free(table[i]);
     free(table);
 }
