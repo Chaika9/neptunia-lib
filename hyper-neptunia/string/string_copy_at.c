@@ -17,7 +17,7 @@ void string_copy_at_nb(char *dest, char const *src, nsize_t atvalue)
 
 char *string_copy_at_nb_wa(char const *src, nsize_t atvalue)
 {
-    char *dest = ncalloc(1, nstrlen(src) + 1);
+    char *dest = ncalloc(nstrlen(src) + 1, sizeof(char));
 
     nmemcpy(dest, src, atvalue);
     return dest;
