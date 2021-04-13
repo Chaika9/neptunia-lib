@@ -36,5 +36,9 @@ void string_copy_at_string(char *dest, char const *src, char const *atstr)
 
 char *string_copy_at_string_wa(char const *src, char const *atstr)
 {
-    return (string_copy_at_nb_wa(src, string_index_of(src, atstr)));
+    int index = string_index_of(src, atstr);
+
+    if (index == -1)
+        return (string_copy_wa(src));
+    return (string_copy_at_nb_wa(src, index));
 }
