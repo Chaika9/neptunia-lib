@@ -10,19 +10,18 @@
 
 char *string_remove(char *src, char const *str, bool(*cmp)())
 {
-    int index;
+    int i;
 
     if (src == NULL || str == NULL)
         return NULL;
-    index = string_index_of(src, str);
-    if (index == -1)
+    if ((i = string_index_of(src, str)) == -1)
         return src;
     if (cmp == NULL) {
-        nmemmove(&src[index], &src[index + nstrlen(str)], nstrlen(src) - index);
+        nmemmove(&src[i], &src[i + nstrlen(str)], nstrlen(src) - i);
     } else {
-        if (!cmp(&src[index], str))
+        if (!cmp(&src[i], str))
             return src;
-        nmemmove(&src[index], &src[index + nstrlen(str)], nstrlen(src) - index);
+        nmemmove(&src[i], &src[i + nstrlen(str)], nstrlen(src) - i);
     }
     return src;
 }
