@@ -15,13 +15,13 @@ PRIVATE regex_t regex_flags[] = {
     {0, NULL}
 };
 
-int l_isregexflag(int c)
+bool l_isregexflag(int c)
 {
     for (nsize_t i = 0; regex_flags[i].flag; i++) {
         if (regex_flags[i].flag == c)
-            return 1;
+            return true;
     }
-    return 0;
+    return false;
 }
 
 regex_t l_get_regex_flag(char flag)

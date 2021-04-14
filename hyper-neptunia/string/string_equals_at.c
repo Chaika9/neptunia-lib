@@ -9,39 +9,39 @@
 #include <nep/nctype.h>
 #include <nep/nstring.h>
 
-int string_equals_at_nb(char const *str1, char const *str2,
+bool string_equals_at_nb(char const *str1, char const *str2,
 nsize_t atvalue)
 {
     if (!atvalue)
-        return 1;
+        return true;
     if (*str1 != *str2)
-        return 0;
+        return false;
     for (nsize_t i = 0; *str1 && *str2 && i < atvalue; i++) {
         if (*str1 != *str2)
-            return 0;
+            return false;
         str1++;
         str2++;
     }
-    return 1;
+    return true;
 }
 
-int string_equals_at_nb_ic(char const *str1, char const *str2,
+bool string_equals_at_nb_ic(char const *str1, char const *str2,
 nsize_t atvalue)
 {
     if (!atvalue)
-        return 1;
+        return true;
     if (ntolower(*str1) != ntolower(*str2))
-        return 0;
+        return false;
     for (nsize_t i = 0; *str1 && *str2 && i < atvalue; i++) {
         if (ntolower(*str1) != ntolower(*str2))
-            return 0;
+            return false;
         str1++;
         str2++;
     }
-    return 1;
+    return true;
 }
 
-int string_equals_at_string(char const *str1, char const *str2,
+bool string_equals_at_string(char const *str1, char const *str2,
 char const *atstr)
 {
     nsize_t len = nstrlen(atstr);
@@ -51,14 +51,14 @@ char const *atstr)
         !string_equals_at_nb(str2, atstr, len))
             break;
         if (*str1 != *str2)
-            return 0;
+            return false;
         str1++;
         str2++;
     }
-    return 1;
+    return true;
 }
 
-int string_equals_at_string_ic(char const *str1, char const *str2,
+bool string_equals_at_string_ic(char const *str1, char const *str2,
 char const *atstr)
 {
     nsize_t len = nstrlen(atstr);
@@ -68,9 +68,9 @@ char const *atstr)
         !string_equals_at_nb_ic(str2, atstr, len))
             break;
         if (ntolower(*str1) != ntolower(*str2))
-            return 0;
+            return false;
         str1++;
         str2++;
     }
-    return 1;
+    return true;
 }

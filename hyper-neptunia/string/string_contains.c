@@ -7,7 +7,7 @@
 
 #include <hnep/nstring.h>
 
-int string_contains(char const *src, char const *str)
+bool string_contains(char const *src, char const *str)
 {
     return (string_index_of(src, str) > -1);
 }

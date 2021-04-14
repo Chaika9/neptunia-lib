@@ -7,24 +7,24 @@
 
 #include <hnep/nstring.h>
 
-int string_equals(char const *str1, char const *str2)
+bool string_equals(char const *str1, char const *str2)
 {
     while (*str1 || *str2) {
         if (*str1 != *str2)
-            return 0;
+            return false;
         str1++;
         str2++;
     }
-    return 1;
+    return true;
 }
 
-int string_equals_ic(char const *str1, char const *str2)
+bool string_equals_ic(char const *str1, char const *str2)
 {
     while (*str1 || *str2) {
         if (ntolower(*str1) != ntolower(*str2))
-            return 0;
+            return false;
         str1++;
         str2++;
     }
-    return 1;
+    return true;
 }
