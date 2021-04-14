@@ -9,7 +9,7 @@
 #include <nep/nlist.h>
 #include <nep/nassert.h>
 
-list_t *hashmap_tolist(hashmap_t *list)
+list_t *hashmap_to_list(hashmap_t *list)
 {
     list_t *copylist;
 

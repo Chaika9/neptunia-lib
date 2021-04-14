@@ -55,7 +55,8 @@ extern hashmap_t *hashmap_copy(hashmap_t *original);
 extern void hashmap_remove(hashmap_t *list, hashmap_node_t *node);
 extern void *hashmap_pop(hashmap_t *list);
 
-extern list_t *hashmap_tolist(hashmap_t *list);
+extern list_t *hashmap_to_list(hashmap_t *list);
+extern char **hashmap_to_table(hashmap_t *list);
 
 extern void hashmap_sort(hashmap_t *list, int(*cmp)());
 

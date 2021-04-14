@@ -40,7 +40,8 @@ SRC_NEPTUNIA =	neptunia/assert/assert.c \
 				neptunia/list/hashmap/hashmap_hash.c \
 				neptunia/list/hashmap/hashmap_print.c \
 				neptunia/list/hashmap/hashmap_sort.c \
-				neptunia/list/hashmap/hashmap_tolist.c \
+				neptunia/list/hashmap/hashmap_to_list.c \
+				neptunia/list/hashmap/hashmap_to_table.c \
 				\
 				neptunia/math/abs.c \
 				neptunia/math/declen.c \
