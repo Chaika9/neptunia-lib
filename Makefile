@@ -29,6 +29,7 @@ SRC_NEPTUNIA =	neptunia/assert/assert.c \
 				neptunia/list/array/list_get.c \
 				neptunia/list/array/list_print.c \
 				neptunia/list/array/list_sort.c \
+				neptunia/list/array/list_to_table.c \
 				\
 				neptunia/list/hashmap/hashmap_add.c \
 				neptunia/list/hashmap/hashmap_clear.c \

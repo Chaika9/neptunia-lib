@@ -49,6 +49,8 @@ extern list_t *list_copy(list_t *original);
 extern void list_remove(list_t *list, list_node_t *node);
 extern void *list_pop(list_t *list);
 
+extern char **list_to_table(list_t *list);
+
 extern void list_sort(list_t *list, int(*cmp)());
 
 extern int list_cmp_str(list_node_t *n1, list_node_t *n2);
