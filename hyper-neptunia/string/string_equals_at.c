@@ -12,32 +12,40 @@
 bool string_equals_at_nb(char const *str1, char const *str2,
 nsize_t atvalue)
 {
+    nsize_t i;
+
     if (!atvalue)
         return true;
     if (*str1 != *str2)
         return false;
-    for (nsize_t i = 0; *str1 && *str2 && i < atvalue; i++) {
+    for (i = 0; *str1 && *str2 && i < atvalue; i++) {
         if (*str1 != *str2)
             return false;
         str1++;
         str2++;
     }
+    if (i < atvalue)
+        return false;
     return true;
 }
 
 bool string_equals_at_nb_ic(char const *str1, char const *str2,
 nsize_t atvalue)
 {
+    nsize_t i;
+
     if (!atvalue)
         return true;
     if (ntolower(*str1) != ntolower(*str2))
         return false;
-    for (nsize_t i = 0; *str1 && *str2 && i < atvalue; i++) {
+    for (i = 0; *str1 && *str2 && i < atvalue; i++) {
         if (ntolower(*str1) != ntolower(*str2))
             return false;
         str1++;
         str2++;
     }
+    if (i < atvalue)
+        return false;
     return true;
 }
 
