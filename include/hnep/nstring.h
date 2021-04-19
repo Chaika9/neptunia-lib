@@ -56,6 +56,8 @@ char *string_matches(char const *str, char const *regex);
 
 char *string_format(char const *format, ...);
 
+char *string_format_space(char *str);
+
 typedef struct {
     char flag;
     char *(*handler)(char const *, char **);
