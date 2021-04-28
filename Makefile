@@ -99,6 +99,9 @@ SRC_NEPTUNIA =	neptunia/assert/assert.c \
 				neptunia/write/write.c \
 
 SRC_HYPER_NEPTUNIA = 	hyper-neptunia/config/json/json_parser.c \
+						hyper-neptunia/config/xml/writer/xml_free.c \
+						hyper-neptunia/config/xml/writer/xml_serialize.c \
+						hyper-neptunia/config/xml/writer/xml_writer.c \
 						hyper-neptunia/config/xml/xml_parser.c \
 						\
 						hyper-neptunia/string/format/format_string.c \

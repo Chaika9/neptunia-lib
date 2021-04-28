@@ -16,10 +16,12 @@ void string_concat(char *dest, const char *str)
 
 char *string_concat_wa(char *dest, const char *str)
 {
-    nsize_t dest_len = nstrlen(dest);
+    nsize_t dest_len = 0;
     nsize_t str_len = nstrlen(str);
     char *_dest;
 
+    if (dest != NULL)
+        dest_len = nstrlen(dest);
     dest = nrealloc(dest, dest_len + str_len + 1);
     _dest = dest + dest_len;
     while (*str)

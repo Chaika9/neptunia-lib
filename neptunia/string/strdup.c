@@ -10,9 +10,12 @@
 
 char *nstrdup(const char *src)
 {
-    char *dest = malloc(sizeof(char) * nstrlen(src));
+    char *dest;
 
-    if (!dest)
+    if (src == NULL)
+        return NULL;
+    dest = malloc(sizeof(char) * nstrlen(src));
+    if (dest == NULL)
         return NULL;
     nstrcpy(dest, src);
     return dest;
