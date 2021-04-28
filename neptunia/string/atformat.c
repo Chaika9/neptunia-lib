@@ -7,7 +7,7 @@
 
 #include <nep/nctype.h>
 
-long l_at_check_format(const char *str, bool *isneg)
+long l_at_check_format(char const *str, bool *isneg)
 {
     long index;
     int pair;

@@ -18,6 +18,8 @@ char *string_copy_wa(char const *src)
 {
     char *dest = ncalloc(nstrlen(src) + 1, sizeof(char));
 
+    if (dest == NULL)
+        return NULL;
     nmemcpy(dest, src, nstrlen(src));
     return dest;
 }

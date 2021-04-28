@@ -6,7 +6,7 @@
 */
 
 #include <nep/nstring.h>
-#include <stdlib.h>
+#include <nep/nmem.h>
 
 char *nstrdup(const char *src)
 {
@@ -14,7 +14,7 @@ char *nstrdup(const char *src)
 
     if (src == NULL)
         return NULL;
-    dest = malloc(sizeof(char) * nstrlen(src));
+    dest = ncalloc(nstrlen(src) + 1, sizeof(char));
     if (dest == NULL)
         return NULL;
     nstrcpy(dest, src);

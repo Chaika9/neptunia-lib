@@ -19,6 +19,8 @@ char *string_copy_at_nb_wa(char const *src, nsize_t atvalue)
 {
     char *dest = ncalloc(nstrlen(src) + 1, sizeof(char));
 
+    if (dest == NULL)
+        return NULL;
     nmemcpy(dest, src, atvalue);
     return dest;
 }

@@ -10,8 +10,8 @@
 
 #include <nep/nctype.h>
 
-extern int natoi(const char *str);
-extern double natof(const char *str);
+extern int natoi(char const *str);
+extern double natof(char const *str);
 
 extern nsize_t nstrlen(const char *str);
 
@@ -43,6 +43,6 @@ extern bool nstr_isdigit(char *str);
 extern void nstrbuf(char **buf, const char *str);
 extern void nullbuf(char **buf, ullong value, const char *base);
 
-extern long l_at_check_format(const char *str, bool *isneg);
+extern long l_at_check_format(char const *str, bool *isneg);
 
 #endif

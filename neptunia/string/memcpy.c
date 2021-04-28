@@ -9,10 +9,14 @@
 
 void *nmemcpy(void *dest, const void *src, nsize_t size)
 {
-    const u8 *sp = (const u8 *)src;
-    u8 *dp = (u8 *)dest;
+    const u8 *sp;
+    u8 *dp;
 
-    while (size) {
+    if (dest == NULL || src == NULL)
+        return NULL;
+    sp = (const u8 *)src;
+    dp = (u8 *)dest;
+    while (size && *sp) {
         *dp++ = *sp++;
         size--;
     }

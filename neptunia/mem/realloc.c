@@ -14,7 +14,7 @@ void *nrealloc(void *ptr, nsize_t size)
 {
     void *newmem;
 
-    if (size == 0) {
+    if (!size) {
         free(ptr);
         return NULL;
     }

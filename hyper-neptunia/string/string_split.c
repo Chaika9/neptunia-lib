@@ -16,6 +16,8 @@ char **string_split(char const *src, char const *str)
 
     while (true) {
         dest = nrealloc(dest, sizeof(char *) * (size++ + 1));
+        if (dest == NULL)
+            return NULL;
         dest[i++] = string_copy_at_string_wa(src, str);
         if ((index = string_index_of(src, str)) == -1)
             break;

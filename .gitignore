@@ -2,3 +2,5 @@
 *.o
 *.a
 *.out
+
+test*.c

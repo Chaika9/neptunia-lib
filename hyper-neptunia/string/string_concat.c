@@ -18,14 +18,12 @@ char *string_concat_wa(char *dest, const char *str)
 {
     nsize_t dest_len = 0;
     nsize_t str_len = nstrlen(str);
-    char *_dest;
 
     if (dest != NULL)
         dest_len = nstrlen(dest);
     dest = nrealloc(dest, dest_len + str_len + 1);
-    _dest = dest + dest_len;
-    while (*str)
-        *_dest++ = *str++;
-    *_dest = 0;
+    if (dest == NULL)
+        return NULL;
+    nmemcpy(dest + dest_len, str, str_len);
     return dest;
 }

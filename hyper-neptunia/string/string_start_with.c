@@ -12,6 +12,5 @@ bool string_start_with(char const *src, char const *str, nsize_t index)
 {
     if (nstrlen(src) < index)
         return false;
-    src += index;
-    return (string_equals_at_nb(src, str, nstrlen(str)));
+    return (string_equals_at_nb(src + index, str, nstrlen(str)));
 }

@@ -24,7 +24,7 @@ PRIVATE void parse_float(double *n, const char **_str)
     }
 }
 
-double natof(const char *str)
+double natof(char const *str)
 {
     double n = 0.0;
     bool isneg = false;

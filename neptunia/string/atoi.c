@@ -9,7 +9,7 @@
 #include <nep/nlimit.h>
 #include <nep/nctype.h>
 
-int natoi(const char *str)
+int natoi(char const *str)
 {
     long n = 0;
     bool isneg = false;

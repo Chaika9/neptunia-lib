@@ -40,7 +40,7 @@ char *string_format(char const *format, ...)
     va_start(args, format);
     while (*format) {
         if (*format != '%') {
-            buffer = nrealloc(buffer, size);
+            buffer = nrealloc(buffer, size + 1);
             buffer[size++ - 1] = *format++;
             continue;
         }
@@ -48,6 +48,5 @@ char *string_format(char const *format, ...)
         buffer = format_call_handler(ntolower(*format++), buffer, &size, args);
     }
     va_end(args);
-    buffer[size - 1] = 0;
     return buffer;
 }
