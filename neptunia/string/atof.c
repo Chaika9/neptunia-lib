@@ -19,7 +19,7 @@ PRIVATE void parse_float(double *n, const char **_str)
         e--;
     }
     while (e < 0) {
-        *n *= 0.1;
+        *n *= 0.1f;
         e++;
     }
 }
@@ -28,9 +28,11 @@ double natof(char const *str)
 {
     double n = 0.0;
     bool isneg = false;
-    long index = l_at_check_format(str, &isneg);
+    long index;
 
-    if (index == -1)
+    if (str == NULL)
+        return 0;
+    if ((index = l_at_check_format(str, &isneg)) == -1)
         return 0;
     for (long i = 0; i < index; i++)
         str++;
