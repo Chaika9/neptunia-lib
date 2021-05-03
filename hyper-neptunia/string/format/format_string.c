@@ -15,7 +15,7 @@ char *l_format_string(char *buffer, nsize_t *size, va_list args)
     char *str = va_arg(args, char *);
     nsize_t str_len = nstrlen(str);
 
-    buffer = nrealloc(buffer, *size + str_len);
+    buffer = nrealloc(buffer, *size, *size + str_len);
     while (*str) {
         buffer[*size - 1] = *str++;
         *size += 1;

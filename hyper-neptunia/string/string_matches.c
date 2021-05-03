@@ -43,7 +43,7 @@ char **string_matches_to_table(char const *str, char const *regex)
         ptr = regex_test(ptr + i - 1, regex);
         if (ptr == NULL)
             break;
-        ptrs = nrealloc(ptrs, sizeof(char *) * (i + 1));
+        ptrs = nrealloc(ptrs, sizeof(char *) * i, sizeof(char *) * (i + 1));
         ptrs[i - 1] = ptr;
     }
     if (ptrs != NULL)

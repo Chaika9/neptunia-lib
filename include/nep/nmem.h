@@ -11,6 +11,7 @@
 #include <nep/nctype.h>
 
 extern void *ncalloc(nsize_t nmem, nsize_t size);
-extern void *nrealloc(void *ptr, nsize_t size);
+extern void *nrealloc(void *ptr, nsize_t size, nsize_t new_size);
+extern void *nrealloc_unsafe(void *ptr, nsize_t size);
 
 #endif
