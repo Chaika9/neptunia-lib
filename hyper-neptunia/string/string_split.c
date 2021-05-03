@@ -15,7 +15,7 @@ char **string_split(char const *src, char const *str)
     int index, i = 0;
 
     while (true) {
-        dest = ntrealloc(dest, sizeof(char *) * size, \
+        dest = nrealloc(dest, sizeof(char *) * size, \
         sizeof(char *) * (size + 1));
         size++;
         if (dest == NULL)

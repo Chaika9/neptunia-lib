@@ -21,7 +21,7 @@ char *string_concat_wa(char *dest, const char *str)
 
     if (dest != NULL)
         dest_len = nstrlen(dest);
-    dest = ntrealloc(dest, dest_len, dest_len + str_len + 1);
+    dest = nrealloc(dest, dest_len, dest_len + str_len + 1);
     if (dest == NULL)
         return NULL;
     nmemcpy(dest + dest_len, str, str_len);
