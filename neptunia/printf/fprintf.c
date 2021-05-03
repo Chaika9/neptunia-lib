@@ -21,7 +21,7 @@ nsize_t nfprintf(FILE *stream, char const *format, ...)
     va_start(args, format);
     nvsprintf(buff, format, args);
     va_end(args);
-    out = nwrite(stream->_fileno, buff);
+    out = nwrite(IO_FILENO(stream), buff);
     free(buff);
     return out;
 }
@@ -32,7 +32,7 @@ nsize_t nvfprintf(FILE *stream, char const *format, va_list args)
     nsize_t out = 0;
 
     nvsprintf(buff, format, args);
-    out = nwrite(stream->_fileno, buff);
+    out = nwrite(IO_FILENO(stream), buff);
     free(buff);
     return out;
 }
