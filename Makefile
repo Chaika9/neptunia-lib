@@ -116,7 +116,6 @@ SRC_HYPER_NEPTUNIA = 	hyper-neptunia/config/json/json_parser.c \
 						hyper-neptunia/string/string_create.c \
 						hyper-neptunia/string/string_equals_at.c \
 						hyper-neptunia/string/string_equals.c \
-						hyper-neptunia/string/string_format_space.c \
 						hyper-neptunia/string/string_format.c \
 						hyper-neptunia/string/string_index.c \
 						hyper-neptunia/string/string_matches.c \
@@ -124,6 +123,7 @@ SRC_HYPER_NEPTUNIA = 	hyper-neptunia/config/json/json_parser.c \
 						hyper-neptunia/string/string_split.c \
 						hyper-neptunia/string/string_start_with.c \
 						hyper-neptunia/string/string_table_free.c \
+						hyper-neptunia/string/string_trim.c \
 
 OBJ_NEPTUNIA = $(SRC_NEPTUNIA:.c=.o)
 OBJ_HYPER_NEPTUNIA = $(SRC_HYPER_NEPTUNIA:.c=.o)
