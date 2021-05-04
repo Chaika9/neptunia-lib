@@ -56,7 +56,7 @@ char *string_matches(char const *str, char const *regex);
 
 char *string_format(char const *format, ...);
 
-char *string_format_space(char *str);
+char *string_trim(char *str);
 
 typedef struct {
     char flag;
@@ -67,6 +67,7 @@ bool l_isregexflag(int c);
 regex_t l_get_regex_flag(char flag);
 
 char *l_format_string(char *buffer, nsize_t *size, va_list args);
+char *l_format_int(char *buffer, nsize_t *size, va_list args);
 
 char *regex_test(char const *str, char const *regex);
 

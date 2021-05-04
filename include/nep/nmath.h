@@ -29,16 +29,16 @@ extern double nfsqrt(double value);
 
 extern double nround(double value, uint precision);
 
-#ifndef MIN
-#define MIN(a, b) ((a < b) ? a : b)
+#ifndef min
+#define min(a, b) ((a < b) ? a : b)
 #endif
 
-#ifndef MAX
-#define MAX(a, b) (a > b) ? a : b)
+#ifndef max
+#define max(a, b) (a > b) ? a : b)
 #endif
 
-#ifndef ABS
-#define ABS(val) ((val < 0) ? -val : val)
+#ifndef abs
+#define abs(val) ((val < 0) ? -val : val)
 #endif
 
 #endif

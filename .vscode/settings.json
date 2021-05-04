@@ -27,6 +27,7 @@
         "njson.h": "c",
         "nxml.h": "c",
         "nlist.h": "c",
-        "stdarg.h": "c"
+        "stdarg.h": "c",
+        "limits": "cpp"
     }
 }

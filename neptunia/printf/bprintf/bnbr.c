@@ -15,7 +15,7 @@ void l_nbprintf_int(char **buf, va_list args)
 
     if (val < 0)
         *(*buf)++ = '-';
-    nullbuf(buf, ABS(val), "0123456789");
+    nullbuf(buf, abs(val), "0123456789");
 }
 
 void l_nbprintf_long(char **buf, va_list args)
@@ -24,7 +24,7 @@ void l_nbprintf_long(char **buf, va_list args)
 
     if (val < 0)
         *(*buf)++ = '-';
-    nullbuf(buf, ABS(val), "0123456789");
+    nullbuf(buf, abs(val), "0123456789");
 }
 
 void l_nbprintf_llong(char **buf, va_list args)
@@ -33,5 +33,5 @@ void l_nbprintf_llong(char **buf, va_list args)
 
     if (val < 0)
         *(*buf)++ = '-';
-    nullbuf(buf, ABS(val), "0123456789");
+    nullbuf(buf, abs(val), "0123456789");
 }
