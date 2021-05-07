@@ -16,9 +16,11 @@ void string_copy(char *dest, char const *src)
 
 char *string_copy_wa(char const *src)
 {
-    char *dest = ncalloc(nstrlen(src) + 1, sizeof(char));
+    char *dest = NULL;
 
-    if (dest == NULL)
+    if (src == NULL)
+        return NULL;
+    if ((dest = ncalloc(nstrlen(src) + 1, sizeof(char))) == NULL)
         return NULL;
     nmemcpy(dest, src, nstrlen(src));
     return dest;
