@@ -10,7 +10,7 @@
 #include <nep/nva_list.h>
 #include <nep/nctype.h>
 
-void l_parse_param_precision(const char **ch, nprintf_param_t *p)
+void l_parse_param_precision(char const **ch, nprintf_param_t *p)
 {
     p->precision = 6;
     if (**ch == '.') {
@@ -24,7 +24,7 @@ void l_parse_param_precision(const char **ch, nprintf_param_t *p)
     }
 }
 
-void l_parse_param_big(const char **ch, nprintf_param_t *p)
+void l_parse_param_big(char const **ch, nprintf_param_t *p)
 {
     p->big = 0;
     if (**ch == 'l') {
@@ -37,7 +37,7 @@ void l_parse_param_big(const char **ch, nprintf_param_t *p)
     }
 }
 
-void l_parse_param_sign(const char **ch, nprintf_param_t *p)
+void l_parse_param_sign(char const **ch, nprintf_param_t *p)
 {
     p->plus = false;
     p->minos = false;
@@ -51,7 +51,7 @@ void l_parse_param_sign(const char **ch, nprintf_param_t *p)
     }
 }
 
-void l_parse_param_wight(const char **ch, nprintf_param_t *p)
+void l_parse_param_wight(char const **ch, nprintf_param_t *p)
 {
     p->wight = 0;
     p->w_ch = ' ';

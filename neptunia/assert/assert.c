@@ -7,8 +7,8 @@
 
 #include <nep/nprintf.h>
 
-void l_assert_fail(const char *expr, const char *filename, \
-int line, void (*func)(const char *))
+void l_assert_fail(char const *expr, char const *filename, \
+int line, void (*func)(char const *))
 {
     nfprintf(stderr, "Assertion failed in [%s:%d] -> (%s)\n", filename, line, \
     expr);

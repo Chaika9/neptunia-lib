@@ -8,7 +8,7 @@
 #include <nep/nstring.h>
 #include <nep/nctype.h>
 
-char *nstrstr(char *str, const char *find)
+char *nstrstr(char *str, char const *find)
 {
     nsize_t startat = 0;
     nsize_t index = 0;

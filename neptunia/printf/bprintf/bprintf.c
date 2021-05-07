@@ -34,9 +34,9 @@ PRIVATE void init_balises(void)
     nbprintf_register_balise("hashmap", &l_nbprintf_list);
 }
 
-PRIVATE char *get_balise(const char *_c)
+PRIVATE char *get_balise(char const *_c)
 {
-    const char *c = _c;
+    char const *c = _c;
     uint64_t start = (uint64_t)&(*c) + 2;
     char *flag;
 
@@ -56,7 +56,7 @@ nsize_t nbvsprintf(char *buf, char const *format, va_list args)
     char *balise;
 
     init_balises();
-    for (const char *c = format; *c; c++) {
+    for (char const *c = format; *c; c++) {
         if (*c == '/' && *(c + 1) == '{') {
             balise = get_balise(c);
             node = hashmap_get(nbprintf_balises, balise);

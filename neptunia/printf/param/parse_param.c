@@ -10,7 +10,7 @@
 #include <nep/nva_list.h>
 #include <nep/nctype.h>
 
-PRIVATE void parse_param_alt(const char **ch, nprintf_param_t *p)
+PRIVATE void parse_param_alt(char const **ch, nprintf_param_t *p)
 {
     p->alt = false;
     if (**ch == '#') {
@@ -19,7 +19,7 @@ PRIVATE void parse_param_alt(const char **ch, nprintf_param_t *p)
     }
 }
 
-void l_parse_param(const char **ch, nprintf_param_t *p)
+void l_parse_param(char const **ch, nprintf_param_t *p)
 {
     parse_param_alt(ch, p);
     l_parse_param_sign(ch, p);

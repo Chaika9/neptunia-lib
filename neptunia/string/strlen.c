@@ -7,7 +7,7 @@
 
 #include <nep/nctype.h>
 
-nsize_t nstrlen(const char *str)
+nsize_t nstrlen(char const *str)
 {
     nsize_t len;
 

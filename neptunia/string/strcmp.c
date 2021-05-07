@@ -7,7 +7,7 @@
 
 #include <nep/nctype.h>
 
-int nstrcmp(const char *s1, const char *s2)
+int nstrcmp(char const *s1, char const *s2)
 {
     nsize_t i;
 
@@ -20,7 +20,7 @@ int nstrcmp(const char *s1, const char *s2)
     return 0;
 }
 
-int nstrncmp(const char *s1, const char *s2, nsize_t length)
+int nstrncmp(char const *s1, char const *s2, nsize_t length)
 {
     nsize_t i = 0;
 

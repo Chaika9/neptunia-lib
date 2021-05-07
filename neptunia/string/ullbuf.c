@@ -8,7 +8,7 @@
 #include <nep/nstring.h>
 #include <nep/nctype.h>
 
-void nullbuf(char **buf, ullong value, const char *base)
+void nullbuf(char **buf, ullong value, char const *base)
 {
     ullong result = 0;
     ullong power = 1;

@@ -8,7 +8,7 @@
 #include <nep/nstring.h>
 #include <nep/nmem.h>
 
-char *nstrdup(const char *src)
+char *nstrdup(char const *src)
 {
     char *dest;
 

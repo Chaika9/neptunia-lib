@@ -109,6 +109,7 @@ SRC_HYPER_NEPTUNIA = 	hyper-neptunia/config/json/json_parser.c \
 						hyper-neptunia/string/regex/regex_find.c \
 						hyper-neptunia/string/regex/regex_skip.c \
 						hyper-neptunia/string/regex/regex_test.c \
+						hyper-neptunia/string/string_append.c \
 						hyper-neptunia/string/string_concat.c \
 						hyper-neptunia/string/string_contains.c \
 						hyper-neptunia/string/string_copy_at.c \

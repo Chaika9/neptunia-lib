@@ -8,8 +8,8 @@
 #ifndef _NEP_ASSERT_H
 #define _NEP_ASSERT_H
 
-extern void l_assert_fail(const char *expr, const char *filename, \
-int line, void (*func)(const char *));
+extern void l_assert_fail(char const *expr, char const *filename, \
+int line, void (*func)(char const *));
 
 #ifndef ASSERT_FUNCTION
 #define ASSERT_FUNCTION ((void *) 0)

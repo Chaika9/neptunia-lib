@@ -8,7 +8,7 @@
 #include <nep/nstring.h>
 #include <nep/nctype.h>
 
-char *nstrcat(char *dest, const char *src)
+char *nstrcat(char *dest, char const *src)
 {
     char *end;
 
@@ -19,7 +19,7 @@ char *nstrcat(char *dest, const char *src)
     return dest;
 }
 
-char *nstrncat(char *dest, const char *src, nsize_t size)
+char *nstrncat(char *dest, char const *src, nsize_t size)
 {
     char *end;
 

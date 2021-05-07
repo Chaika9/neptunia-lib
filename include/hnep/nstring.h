@@ -41,8 +41,10 @@ char *string_copy_at_nb_wa(char const *src, nsize_t atvalue);
 void string_copy_at_string(char *dest, char const *src, char const *atstr);
 char *string_copy_at_string_wa(char const *src, char const *atstr);
 
-void string_concat(char *dest, const char *str);
-char *string_concat_wa(char *dest, const char *str);
+void string_concat(char *dest, char const *str);
+char *string_concat_wa(char *dest, char const *str);
+
+char *string_append(char *dest, char ch);
 
 char **string_split(char const *src, char const *str);
 

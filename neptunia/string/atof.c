@@ -8,7 +8,7 @@
 #include <nep/nstring.h>
 #include <nep/nctype.h>
 
-PRIVATE void parse_float(double *n, const char **_str)
+PRIVATE void parse_float(double *n, char const **_str)
 {
     char const *str = *_str;
     int e = 0;

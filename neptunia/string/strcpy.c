@@ -8,7 +8,7 @@
 #include <nep/nstring.h>
 #include <nep/nctype.h>
 
-char *nstrcpy(char *dest, const char *src)
+char *nstrcpy(char *dest, char const *src)
 {
     nsize_t i;
 
@@ -18,7 +18,7 @@ char *nstrcpy(char *dest, const char *src)
     return dest;
 }
 
-char *nstrncpy(char *dest, const char *src, nsize_t length)
+char *nstrncpy(char *dest, char const *src, nsize_t length)
 {
     nsize_t len = nstrlen(src);
     nsize_t i;

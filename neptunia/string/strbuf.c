@@ -5,7 +5,7 @@
 ** string - nstrbuf.
 */
 
-void nstrbuf(char **buf, const char *str)
+void nstrbuf(char **buf, char const *str)
 {
     if (!str)
         return;

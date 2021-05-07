@@ -10,6 +10,6 @@
 
 #include <nep/nctype.h>
 
-extern nsize_t nwrite(int fd, const char *buf);
+extern nsize_t nwrite(int fd, char const *buf);
 
 #endif

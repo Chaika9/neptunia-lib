@@ -9,7 +9,7 @@
 #include <nep/nstring.h>
 #include <unistd.h>
 
-nsize_t nwrite(int fd, const char *buf)
+nsize_t nwrite(int fd, char const *buf)
 {
     return (write(fd, buf, nstrlen(buf)));
 }
