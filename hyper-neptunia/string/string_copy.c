@@ -17,11 +17,13 @@ void string_copy(char *dest, char const *src)
 char *string_copy_wa(char const *src)
 {
     char *dest = NULL;
+    nsize_t len = 0;
 
     if (src == NULL)
         return NULL;
-    if ((dest = ncalloc(nstrlen(src) + 1, sizeof(char))) == NULL)
+    len = nstrlen(src);
+    if ((dest = ncalloc(len + 1, sizeof(char))) == NULL)
         return NULL;
-    nmemcpy(dest, src, nstrlen(src));
+    nmemcpy(dest, src, len);
     return dest;
 }
