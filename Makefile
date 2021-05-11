@@ -119,6 +119,7 @@ SRC_HYPER_NEPTUNIA = 	hyper-neptunia/config/json/json_parser.c \
 						hyper-neptunia/string/string_equals.c \
 						hyper-neptunia/string/string_format.c \
 						hyper-neptunia/string/string_index.c \
+						hyper-neptunia/string/string_isempty.c \
 						hyper-neptunia/string/string_matches.c \
 						hyper-neptunia/string/string_remove.c \
 						hyper-neptunia/string/string_split.c \
