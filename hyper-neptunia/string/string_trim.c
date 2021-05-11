@@ -11,10 +11,10 @@
 char *string_trim(char *str)
 {
     for (nsize_t i = 0; str[i]; i++) {
-        if (str[i] != ' ')
+        if (!nisspace(str[i]))
             continue;
         i++;
-        while (str[i] && str[i] == ' ')
+        while (str[i] && nisspace(str[i]))
             nmemmove(&str[i], &str[i + 1], nstrlen(str) - i);
     }
     return str;
