@@ -10,12 +10,13 @@
 
 list_t *list_copy(list_t *original)
 {
-    list_t *out;
+    list_t *out = NULL;
 
     nassert(original == NULL && "[original] -> NullPointer!");
     if (original == NULL)
         return NULL;
-    out = list_create();
+    if ((out = list_create() == NULL))
+        return NULL;
     list_foreach(original, node)
         list_add(out, node->value);
     return out;

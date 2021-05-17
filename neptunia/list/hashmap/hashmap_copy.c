@@ -10,12 +10,13 @@
 
 hashmap_t *hashmap_copy(hashmap_t *original)
 {
-    hashmap_t *out;
+    hashmap_t *out = NULL;
 
     nassert(original == NULL && "[original] -> NullPointer!");
     if (original == NULL)
         return NULL;
-    out = hashmap_create();
+    if ((out = hashmap_create() == NULL))
+        return NULL;
     hashmap_foreach(original, node)
         hashmap_add(out, node->key, node->value);
     return out;

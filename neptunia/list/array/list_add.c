@@ -53,7 +53,8 @@ list_node_t *list_add(list_t *list, void *value)
     nassert(list == NULL && "[list] -> NullPointer!");
     if (list == NULL)
         return NULL;
-    node = ncalloc(1, sizeof(list_node_t));
+    if ((node = ncalloc(1, sizeof(list_node_t))) == NULL)
+        return NULL;
     node->value = value;
     list_add_node(list, node);
     return node;
@@ -66,7 +67,8 @@ list_node_t *list_add_before(list_t *list, list_node_t *after, void *value)
     nassert(list == NULL && "[list] -> NullPointer!");
     if (list == NULL)
         return NULL;
-    node = ncalloc(1, sizeof(list_node_t));
+    if ((node = ncalloc(1, sizeof(list_node_t))) == NULL)
+        return NULL;
     node->value = value;
     list_add_node_before(list, after, node);
     return node;

@@ -54,7 +54,8 @@ hashmap_node_t *hashmap_add(hashmap_t *list, char const *key, void *value)
     nassert(list == NULL && "[list] -> NullPointer!");
     if (list == NULL)
         return NULL;
-    node = ncalloc(1, sizeof(hashmap_node_t));
+    if ((node = ncalloc(1, sizeof(hashmap_node_t))) == NULL)
+        return NULL;
     node->key = (char *)key;
     node->hash = l_hashmap_hash(key);
     node->value = value;
@@ -70,7 +71,8 @@ char const *key, void *value)
     nassert(list == NULL && "[list] -> NullPointer!");
     if (list == NULL)
         return NULL;
-    node = ncalloc(1, sizeof(hashmap_node_t));
+    if ((node = ncalloc(1, sizeof(hashmap_node_t))) == NULL)
+        return NULL;
     node->key = (char *)key;
     node->hash = l_hashmap_hash(key);
     node->value = value;
