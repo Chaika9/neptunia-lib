@@ -15,7 +15,7 @@ list_t *list_copy(list_t *original)
     nassert(original == NULL && "[original] -> NullPointer!");
     if (original == NULL)
         return NULL;
-    if ((out = list_create() == NULL))
+    if ((out = list_create()) == NULL)
         return NULL;
     list_foreach(original, node)
         list_add(out, node->value);

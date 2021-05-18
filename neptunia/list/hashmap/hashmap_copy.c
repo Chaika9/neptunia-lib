@@ -15,7 +15,7 @@ hashmap_t *hashmap_copy(hashmap_t *original)
     nassert(original == NULL && "[original] -> NullPointer!");
     if (original == NULL)
         return NULL;
-    if ((out = hashmap_create() == NULL))
+    if ((out = hashmap_create()) == NULL)
         return NULL;
     hashmap_foreach(original, node)
         hashmap_add(out, node->key, node->value);

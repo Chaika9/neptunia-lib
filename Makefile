@@ -115,6 +115,7 @@ SRC_HYPER_NEPTUNIA = 	hyper-neptunia/config/json/json_parser.c \
 						hyper-neptunia/string/string_copy_at.c \
 						hyper-neptunia/string/string_copy.c \
 						hyper-neptunia/string/string_create.c \
+						hyper-neptunia/string/string_ends_with.c \
 						hyper-neptunia/string/string_equals_at.c \
 						hyper-neptunia/string/string_equals.c \
 						hyper-neptunia/string/string_format.c \

@@ -10,7 +10,11 @@
 
 bool string_start_with(char const *src, char const *str, nsize_t index)
 {
-    if (nstrlen(src) < index)
+    size_t src_len = nstrlen(src);
+
+    if (src == NULL || str == NULL)
         return false;
-    return (string_equals_at_nb(src + index, str, nstrlen(str)));
+    if (src_len < index)
+        return false;
+    return (string_equals_at_nb(src + index, str, src_len));
 }

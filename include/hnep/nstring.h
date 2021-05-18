@@ -32,6 +32,8 @@ bool string_equals_ic(char const *str1, char const *str2);
 
 bool string_start_with(char const *src, char const *str, nsize_t index);
 
+bool string_ends_with(char const *src, char const *str);
+
 bool string_isempty(char const *str);
 
 void string_copy(char *dest, char const *src);
