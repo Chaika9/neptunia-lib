@@ -5,3 +5,7 @@
 
 test/*
 test*.c
+
+# IDE
+.idea
+.vscode
