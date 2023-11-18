@@ -1,8 +1,0 @@
-{
-    "files.exclude": {
-        "**/*.o": true
-    },
-    "files.associations": {
-        "nstring.h": "c"
-    }
-}
